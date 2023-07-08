@@ -53,7 +53,7 @@ public class Persona {
         this.telefono = telefono;
     }
     
-    
-    
-    
+     
 }
+
+

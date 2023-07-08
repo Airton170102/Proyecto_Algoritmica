@@ -15,7 +15,7 @@ public class PersonaArreglo {
     
     public void registrarCandidato(Candidato candidato) {
         agregar(candidato);
-        System.out.println("Candidato registrado exitosamente");
+        System.out.println("Candidato registrado exitosamente: " + candidato.getNombre() + " " + candidato.getApellido());
     }
 
     public Candidato buscarCandidato(String nombre, String apellido) {
@@ -27,20 +27,30 @@ public class PersonaArreglo {
         return null;
     }
     
-
-    public void registrarEmpleado() {
+    public void registrarEmpleado(Empleado empleado) {
+        agregar(empleado);
+        System.out.println("Empleado registrado exitosamente: " + empleado.getNombre() + " " + empleado.getApellido());
     }
     
-    public Empleado buscarEmpleado(String nombre) {
+    public Empleado buscarEmpleado(String nombre, String apellido) {
         for(int i=0;i<indice;i++){
-            if(personas[i] instanceof Candidato && personas[i].getNombre().equals(nombre)){
-                return (Candidato) personas[i];
+            if(personas[i] instanceof Empleado && personas[i].getNombre().equals(nombre)&& personas[i].getApellido().equals(apellido)){
+                return (Empleado) personas[i];
             }
         }
         return null;
     }
     
-
-    public void despedirEmpleado() {
+    public void despedirEmpleado(String nombre, String apellido) {
+        for (int i = 0; i < indice; i++) {
+            if (personas[i] instanceof Empleado && personas[i].getNombre().equals(nombre) && personas[i].getApellido().equals(apellido)) {
+                personas[i] = null;
+                System.out.println("Empleado despedido exitosamente: " + nombre + " " + apellido);
+                return;
+            }
+        }
+        System.out.println("No se encontró ningún empleado con el nombre: " + nombre + " " + apellido);
     }
 }
+
+
