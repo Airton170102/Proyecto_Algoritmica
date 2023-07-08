@@ -16,7 +16,7 @@ public class Usuario {
         return password;
     }
     
-    
-    public void verificarPassword() {
+    public boolean verificarPassword() {
+        return this.password.equals(password);  
     }
 }
