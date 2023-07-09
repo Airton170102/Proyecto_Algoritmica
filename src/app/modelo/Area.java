@@ -1,3 +1,5 @@
+package app.modelo;
+
 public class Area {
 
     private String nombre;
@@ -7,7 +9,7 @@ public class Area {
     }
 
     public String getNombre() {
-        return nombre;
+        return nombre;//nombre 
     }
 
     public void setNombre(String nombre) {

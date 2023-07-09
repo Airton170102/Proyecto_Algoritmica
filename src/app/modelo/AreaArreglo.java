@@ -1,3 +1,8 @@
+package app.modelo;
+
+
+import app.modelo.Area;
+
 public class AreaArreglo {
 
     private int indice;
