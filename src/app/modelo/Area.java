@@ -11,7 +11,7 @@ public class Area {
     }
 
     public String getNombre() {
-        return nombre;
+        return nombre;//nombre 
     }
 
     public boolean isCuenta() {
