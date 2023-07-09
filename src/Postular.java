@@ -13,7 +13,6 @@ public class Postular {
         return fecha;
     }
     
-
     public void contratarCandidato() {
     }
 

@@ -41,9 +41,6 @@ public class Contrato {
 
     public String getDescripcion() {
         return descripcion;
-    }
-    
-    
-     
+    }   
     
 }
