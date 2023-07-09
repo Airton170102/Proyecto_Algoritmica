@@ -1,3 +1,5 @@
+package app.modelo;
+
 public class Usuario {
 
     private String correo;
@@ -8,15 +10,19 @@ public class Usuario {
         this.password = password;
     }
 
-    public String getCorreo() {
+  public String getCorreo() {
         return correo;
     }
 
     public String getPassword() {
         return password;
     }
+
+    public boolean verificarCorreo(String correo) {
+        return this.correo.equals(correo);  
+    }
     
-    public boolean verificarPassword() {
+    public boolean verificarPassword(String password) {
         return this.password.equals(password);  
     }
 }
