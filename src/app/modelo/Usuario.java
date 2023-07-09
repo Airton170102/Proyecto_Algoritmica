@@ -1,3 +1,5 @@
+package app.modelo;
+
 public class Usuario {
 
     private String correo;
