@@ -1,3 +1,8 @@
+package app.modelo;
+
+
+import app.modelo.Estado;
+
 public class EstadoArreglo {
 
     private int indice;

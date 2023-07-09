@@ -1,4 +1,7 @@
+package app.modelo;
 
+
+import app.modelo.Puesto;
 import java.util.Date;
 
 public class ProcesoSeleccion {

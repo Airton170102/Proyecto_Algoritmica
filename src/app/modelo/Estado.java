@@ -1,3 +1,5 @@
+package app.modelo;
+
 public class Estado {
 
     private String nombre;
