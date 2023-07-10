@@ -24,7 +24,7 @@ public class PersonaArreglo {
         this.personas[this.indice] = persona;
         this.indice++;
     }
-     public void registrarUsuario(Usuario usuario) {
+    public void registrarUsuario(Usuario usuario) {
         try(PrintWriter pw = new PrintWriter(new FileWriter("usuarios.txt", true))) {
             pw.println(usuario.getCorreo() + "," + usuario.getPassword());
         } catch(IOException e) {

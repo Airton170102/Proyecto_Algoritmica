@@ -1,13 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package Vista;
 
-/**
- *
- * @author alvar
- */
+//import javax.swing.JOptionPane;
+
 public class frmLogin extends javax.swing.JFrame {
 
     /**
@@ -15,6 +10,7 @@ public class frmLogin extends javax.swing.JFrame {
      */
     public frmLogin() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -92,6 +88,18 @@ public class frmLogin extends javax.swing.JFrame {
         lblPassword.setFont(new java.awt.Font("Rockwell", 0, 12)); // NOI18N
         lblPassword.setText("PASSWORD");
 
+        txtCorreo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCorreoActionPerformed(evt);
+            }
+        });
+
+        txtPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPasswordActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panControlesLayout = new javax.swing.GroupLayout(panControles);
         panControles.setLayout(panControlesLayout);
         panControlesLayout.setHorizontalGroup(
@@ -124,6 +132,11 @@ public class frmLogin extends javax.swing.JFrame {
         panBotones.setBackground(new java.awt.Color(0, 255, 204));
 
         btnIngresar.setText("Ingresar");
+        btnIngresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIngresarActionPerformed(evt);
+            }
+        });
 
         btnSalir.setText("Salir");
 
@@ -180,6 +193,29 @@ public class frmLogin extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
+        /*
+        String correo = txtCorreo.getText(); 
+        String password = txtPassword.getText();
+        if (correo.equals("Alvaro")&&password.equals("alvaro123")){
+            frmPrincipal p = new frmPrincipal();
+            JOptionPane.showMessageDialog(null, "Bienvenido al Sistema RRHH");
+            p.show();
+        }
+        else {
+            JOptionPane.showMessageDialog(null, "Credenciales invalidas");
+        }
+        */
+    }//GEN-LAST:event_btnIngresarActionPerformed
+
+    private void txtCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCorreoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCorreoActionPerformed
+
+    private void txtPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPasswordActionPerformed
 
     /**
      * @param args the command line arguments

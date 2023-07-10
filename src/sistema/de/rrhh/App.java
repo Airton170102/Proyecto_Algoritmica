@@ -8,7 +8,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
 public class App {
-     public static void main(String[] args) throws ParseException {        
+     public static void main(String[] args) throws ParseException {
         PersonaArreglo personaArreglo = new PersonaArreglo(100); // capacidad para 100 personas
         Scanner scanner = new Scanner(System.in);
         boolean keepRunning = true;
