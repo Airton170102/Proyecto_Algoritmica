@@ -1,7 +1,7 @@
-package app.modelo;
+package Modelo;
 
 
-import app.modelo.Puesto;
+import Modelo.Puesto;
 import java.util.Date;
 
 public class ProcesoSeleccion {

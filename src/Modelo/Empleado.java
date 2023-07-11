@@ -1,7 +1,7 @@
-package app.modelo;
+package Modelo;
 
 
-import app.modelo.Contrato;
+import Modelo.Contrato;
 import java.util.Date;
 
 public class Empleado extends Persona {

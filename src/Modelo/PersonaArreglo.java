@@ -1,7 +1,7 @@
-package app.modelo;
+package Modelo;
 
-import app.modelo.Empleado;
-import app.modelo.Candidato;
+import Modelo.Empleado;
+import Modelo.Candidato;
 import java.io.*;
 import java.util.Scanner;
 import java.util.Date;

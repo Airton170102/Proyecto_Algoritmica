@@ -139,6 +139,11 @@ public class frmLogin extends javax.swing.JFrame {
         });
 
         btnSalir.setText("Salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panBotonesLayout = new javax.swing.GroupLayout(panBotones);
         panBotones.setLayout(panBotonesLayout);
@@ -195,18 +200,7 @@ public class frmLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
-        /*
-        String correo = txtCorreo.getText(); 
-        String password = txtPassword.getText();
-        if (correo.equals("Alvaro")&&password.equals("alvaro123")){
-            frmPrincipal p = new frmPrincipal();
-            JOptionPane.showMessageDialog(null, "Bienvenido al Sistema RRHH");
-            p.show();
-        }
-        else {
-            JOptionPane.showMessageDialog(null, "Credenciales invalidas");
-        }
-        */
+        // TODO add your handling code here:
     }//GEN-LAST:event_btnIngresarActionPerformed
 
     private void txtCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCorreoActionPerformed
@@ -216,6 +210,10 @@ public class frmLogin extends javax.swing.JFrame {
     private void txtPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasswordActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPasswordActionPerformed
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -253,9 +251,9 @@ public class frmLogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnIngresar;
-    private javax.swing.JButton btnRegistro;
-    private javax.swing.JButton btnSalir;
+    public javax.swing.JButton btnIngresar;
+    public javax.swing.JButton btnRegistro;
+    public javax.swing.JButton btnSalir;
     private javax.swing.JLabel lblCorreo;
     private javax.swing.JLabel lblImagen;
     private javax.swing.JLabel lblPassword;
@@ -264,7 +262,7 @@ public class frmLogin extends javax.swing.JFrame {
     private javax.swing.JPanel panControles;
     private javax.swing.JPanel panFondo;
     private javax.swing.JPanel panTitulo;
-    private javax.swing.JTextField txtCorreo;
-    private javax.swing.JPasswordField txtPassword;
+    public javax.swing.JTextField txtCorreo;
+    public javax.swing.JPasswordField txtPassword;
     // End of variables declaration//GEN-END:variables
 }

@@ -37,7 +37,7 @@ public class frmRegistro extends javax.swing.JFrame {
         txtPassword = new javax.swing.JPasswordField();
         panBotones = new javax.swing.JPanel();
         btnRegistro = new javax.swing.JButton();
-        btnSalir = new javax.swing.JButton();
+        btnVolver = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -113,8 +113,18 @@ public class frmRegistro extends javax.swing.JFrame {
         panBotones.setBackground(new java.awt.Color(204, 204, 204));
 
         btnRegistro.setText("Registrarse");
+        btnRegistro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistroActionPerformed(evt);
+            }
+        });
 
-        btnSalir.setText("Salir");
+        btnVolver.setText("Volver");
+        btnVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVolverActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panBotonesLayout = new javax.swing.GroupLayout(panBotones);
         panBotones.setLayout(panBotonesLayout);
@@ -124,7 +134,7 @@ public class frmRegistro extends javax.swing.JFrame {
                 .addGap(134, 134, 134)
                 .addComponent(btnRegistro)
                 .addGap(18, 18, 18)
-                .addComponent(btnSalir)
+                .addComponent(btnVolver)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panBotonesLayout.setVerticalGroup(
@@ -133,7 +143,7 @@ public class frmRegistro extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(panBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnRegistro)
-                    .addComponent(btnSalir))
+                    .addComponent(btnVolver))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
@@ -175,6 +185,14 @@ public class frmRegistro extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRegistroActionPerformed
+
+    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnVolverActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -211,8 +229,8 @@ public class frmRegistro extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnRegistro;
-    private javax.swing.JButton btnSalir;
+    public javax.swing.JButton btnRegistro;
+    public javax.swing.JButton btnVolver;
     private javax.swing.JLabel lblCorreo;
     private javax.swing.JLabel lblImagenRegistro;
     private javax.swing.JLabel lblPassword;
@@ -221,7 +239,7 @@ public class frmRegistro extends javax.swing.JFrame {
     private javax.swing.JPanel panControles;
     private javax.swing.JPanel panFondo;
     private javax.swing.JPanel panTitulo;
-    private javax.swing.JTextField txtCorreo;
-    private javax.swing.JPasswordField txtPassword;
+    public javax.swing.JTextField txtCorreo;
+    public javax.swing.JPasswordField txtPassword;
     // End of variables declaration//GEN-END:variables
 }
