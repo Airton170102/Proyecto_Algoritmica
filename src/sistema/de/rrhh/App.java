@@ -12,12 +12,14 @@ import java.text.SimpleDateFormat;
 import Controladores.ControladorLogin;
 import Modelo.Persona;
 import Modelo.PersonaArreglo;
+import Modelo.Usuario;
+import Modelo.UsuarioArreglo;
 import Vista.frmLogin;
 
 public class App {
      public static void main(String[] args) {
         frmLogin fLogin = new frmLogin();
-        PersonaArreglo arreglo = new PersonaArreglo(10);
+        UsuarioArreglo arreglo = new UsuarioArreglo(10);
         ControladorLogin controlLogin = new ControladorLogin(arreglo,fLogin);
         controlLogin.iniciar();
         /* 

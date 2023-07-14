@@ -3,17 +3,17 @@ package Controladores;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import Modelo.PersonaArreglo;
+import Modelo.UsuarioArreglo;
 import Vista.frmLogin;
 import Vista.frmPrincipal;
 import Vista.frmRegistro;
 
 public class ControladorLogin {
-    PersonaArreglo pa;
+    UsuarioArreglo ua;
     frmLogin fl;
 
-    public ControladorLogin (PersonaArreglo pa, frmLogin fl) {
-        this.pa = pa;
+    public ControladorLogin (UsuarioArreglo ua, frmLogin fl) {
+        this.ua = ua;
         this.fl = fl;
         this.fl.btnSalir.addActionListener( new ActionListener() {
             @Override
@@ -28,7 +28,7 @@ public class ControladorLogin {
                 //Librerias.SerializadoraGen.serializar("Datos", Configuracion.Datos.personas);
                 fl.setVisible(false);
                 frmPrincipal fPrincipal = new frmPrincipal();
-                ControladorPrincipal controlPrincipal = new ControladorPrincipal(pa,fPrincipal);
+                ControladorPrincipal controlPrincipal = new ControladorPrincipal(ua,fPrincipal);
                 controlPrincipal.iniciar();
             }
         
@@ -39,7 +39,7 @@ public class ControladorLogin {
                 //Librerias.SerializadoraGen.serializar("Datos", Configuracion.Datos.personas);
                 fl.setVisible(false);
                 frmRegistro fRegistro = new frmRegistro();
-                ControladorRegistro controlRegistro = new ControladorRegistro(pa,fRegistro);
+                ControladorRegistro controlRegistro = new ControladorRegistro(ua,fRegistro);
                 controlRegistro.iniciar();
             }
         });

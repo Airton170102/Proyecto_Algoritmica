@@ -4,38 +4,43 @@ package Controladores;
 import Modelo.PersonaArreglo;
 import Vista.frmLogin;
 import Vista.frmRegistro;
+import Modelo.Usuario;
+import Modelo.UsuarioArreglo;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 
 public class ControladorRegistro {
-    PersonaArreglo pa;
+    UsuarioArreglo ua;
     frmRegistro fr;
 
-    public ControladorRegistro (PersonaArreglo pa, frmRegistro fr) {
-        this.pa = pa;
+    public ControladorRegistro (UsuarioArreglo ua, frmRegistro fr) {
+        this.ua = ua;
         this.fr = fr;
         this.fr.btnVolver.addActionListener( new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //Librerias.SerializadoraGen.serializar("Datos", Configuracion.Datos.personas);
                 fr.setVisible(false);
                 frmLogin fLogin = new frmLogin();
-                ControladorLogin controlLogin = new ControladorLogin(pa,fLogin);
+                ControladorLogin controlLogin = new ControladorLogin(ua,fLogin);
                 controlLogin.iniciar();
             }
         });
         this.fr.btnRegistro.addActionListener( new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //Librerias.SerializadoraGen.serializar("Datos", Configuracion.Datos.personas);
-                
-                
-                
-                fr.setVisible(false);
-                frmLogin fLogin = new frmLogin();
-                ControladorLogin controlLogin = new ControladorLogin(pa,fLogin);
-                controlLogin.iniciar();
-                
+                String c = fr.txtCorreo.getText();
+                String p = fr.txtPassword.getText();
+                if (c.contains("@")){
+                    ua.registrarCorreoYPassword(c,p);
+                    fr.setVisible(false);
+                    frmLogin fLogin = new frmLogin();
+                    ControladorLogin controlLogin = new ControladorLogin(ua,fLogin);
+                    controlLogin.iniciar();
+                } else{
+                    JOptionPane.showMessageDialog( fr, "Credencial de correo invalida" );
+                }
+                limpiarControles();
             }
         });
     }

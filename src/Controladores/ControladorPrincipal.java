@@ -1,15 +1,15 @@
 
 package Controladores;
 
-import Modelo.PersonaArreglo;
+import Modelo.UsuarioArreglo;
 import Vista.frmPrincipal;
 
 public class ControladorPrincipal {
-    PersonaArreglo pa;
+    UsuarioArreglo ua;
     frmPrincipal fp;
 
-    public ControladorPrincipal(PersonaArreglo pa, frmPrincipal fp) {
-        this.pa = pa;
+    public ControladorPrincipal(UsuarioArreglo ua, frmPrincipal fp) {
+        this.ua = ua;
         this.fp = fp;
     }
     
