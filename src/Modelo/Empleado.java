@@ -18,16 +18,6 @@ public class Empleado extends Persona {
     public Contrato getContrato() {
         return contrato;
     }
-
-     
-    public void iniciarSesion() {
-        String correo = usuario.getCorreo();
-        String password = usuario.getPassword();
-        
-        if(correo.equals("usuario@gmail.com") && password.equals("password")){
-            System.out.println("Inicio de sesion exitoso");    
-        }else{
-            System.out.println("Error al iniciar sesion");
-        }
-    }
+    
+   
 }
