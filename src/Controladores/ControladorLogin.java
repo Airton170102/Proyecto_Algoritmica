@@ -48,7 +48,7 @@ public class ControladorLogin {
                 //Librerias.SerializadoraGen.serializar("Datos", Configuracion.Datos.personas);
                 fl.setVisible(false);
                 frmRegistro fRegistro = new frmRegistro();
-                ControladorRegistro controlRegistro = new ControladorRegistro(ua,fRegistro);
+                ControladorRegistroUsuario controlRegistro = new ControladorRegistroUsuario(ua,fRegistro);
                 controlRegistro.iniciar();
             }
         });

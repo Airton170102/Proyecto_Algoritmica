@@ -8,11 +8,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
-public class ControladorRegistro {
+public class ControladorRegistroUsuario {
     UsuarioArreglo ua;
     frmRegistro fr;
 
-    public ControladorRegistro (UsuarioArreglo ua, frmRegistro fr) {
+    public ControladorRegistroUsuario (UsuarioArreglo ua, frmRegistro fr) {
         this.ua = ua;
         this.fr = fr;
         this.fr.btnVolver.addActionListener( new ActionListener() {
