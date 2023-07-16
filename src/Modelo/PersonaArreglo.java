@@ -26,28 +26,6 @@ public class PersonaArreglo {
         this.indice++;
     }
     
-    public void registrarUsuario(Usuario usuario) {
-        try(PrintWriter pw = new PrintWriter(new FileWriter("usuarios.txt", true))) {
-            pw.println(usuario.getCorreo() + "," + usuario.getPassword());
-        } catch(IOException e) {
-            System.out.println("Error al registrar usuario: " + e.getMessage());
-        }
-    }
-
-    public void cargarUsuarios() {
-        try(Scanner sc = new Scanner(new File("usuarios.txt"))) {
-            while(sc.hasNextLine()) {
-                String line = sc.nextLine();
-                String[] parts = line.split(",");
-                String correo = parts[0];
-                String password = parts[1];
-                // Aquí podrías crear tus objetos Usuario o añadirlos a una lista
-            }
-        } catch(FileNotFoundException e) {
-            System.out.println("Error al cargar usuarios: " + e.getMessage());
-        }
-    }
-    
     public void registrarCandidato(Candidato candidato) {
         agregar(candidato);
         System.out.println("Candidato registrado exitosamente");
@@ -62,7 +40,6 @@ public class PersonaArreglo {
         }
         return null;
     }
-    
 
     public void registrarEmpleado(Empleado empleado) {
         agregar(empleado);

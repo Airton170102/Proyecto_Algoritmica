@@ -18,14 +18,12 @@ public class ControladorLogin {
         this.fl.btnSalir.addActionListener( new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //Librerias.SerializadoraGen.serializar("Datos", Configuracion.Datos.personas);
                 System.exit(0);
             }
         });
         this.fl.btnIngresar.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-                //Librerias.SerializadoraGen.serializar("Datos", Configuracion.Datos.personas);
                 fl.setVisible(false);
                 frmPrincipal fPrincipal = new frmPrincipal();
                 ControladorPrincipal controlPrincipal = new ControladorPrincipal(ua,fPrincipal);
