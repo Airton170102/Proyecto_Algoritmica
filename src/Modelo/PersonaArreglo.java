@@ -25,6 +25,7 @@ public class PersonaArreglo {
         this.personas[this.indice] = persona;
         this.indice++;
     }
+    
     public void registrarUsuario(Usuario usuario) {
         try(PrintWriter pw = new PrintWriter(new FileWriter("usuarios.txt", true))) {
             pw.println(usuario.getCorreo() + "," + usuario.getPassword());
@@ -46,6 +47,7 @@ public class PersonaArreglo {
             System.out.println("Error al cargar usuarios: " + e.getMessage());
         }
     }
+    
     public void registrarCandidato(Candidato candidato) {
         agregar(candidato);
         System.out.println("Candidato registrado exitosamente");

@@ -1,10 +1,8 @@
 
 package Controladores;
 
-import Modelo.PersonaArreglo;
 import Vista.frmLogin;
 import Vista.frmRegistro;
-import Modelo.Usuario;
 import Modelo.UsuarioArreglo;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -33,6 +31,7 @@ public class ControladorRegistro {
                 String p = fr.txtPassword.getText();
                 if (c.contains("@")){
                     ua.registrarCorreoYPassword(c,p);
+                    JOptionPane.showMessageDialog( fr, "Registro exitoso");
                     fr.setVisible(false);
                     frmLogin fLogin = new frmLogin();
                     ControladorLogin controlLogin = new ControladorLogin(ua,fLogin);
