@@ -1,13 +1,28 @@
 package sistema.de.rrhh;
-import app.modelo.PersonaArreglo;
-import app.modelo.Candidato;
-import app.modelo.Usuario;
+/*
+import Modelo.PersonaArreglo;
+import Modelo.Candidato;
+import Modelo.Usuario;
 import java.util.Scanner;
 import java.util.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+*/
+
+import Controladores.ControladorLogin;
+import Modelo.Persona;
+import Modelo.PersonaArreglo;
+import Modelo.Usuario;
+import Modelo.UsuarioArreglo;
+import Vista.frmLogin;
+
 public class App {
-     public static void main(String[] args) throws ParseException {
+     public static void main(String[] args) {
+        frmLogin fLogin = new frmLogin();
+        UsuarioArreglo arreglo = new UsuarioArreglo(10);
+        ControladorLogin controlLogin = new ControladorLogin(arreglo,fLogin);
+        controlLogin.iniciar();
+        /* 
         PersonaArreglo personaArreglo = new PersonaArreglo(100); // capacidad para 100 personas
         Scanner scanner = new Scanner(System.in);
         boolean keepRunning = true;
@@ -96,5 +111,6 @@ public class App {
             }
         }
         scanner.close();
+        */
     }
 }

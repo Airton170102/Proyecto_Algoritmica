@@ -1,7 +1,7 @@
-package app.modelo;
+package Modelo;
 
 
-import app.modelo.Estado;
+import Modelo.Estado;
 
 public class EstadoArreglo {
 

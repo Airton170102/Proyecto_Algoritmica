@@ -1,7 +1,7 @@
-package app.modelo;
+package Modelo;
 
 
-import app.modelo.Area;
+import Modelo.Area;
 
 public class AreaArreglo {
 

@@ -1,7 +1,7 @@
-package app.modelo;
+package Modelo;
 
-import app.modelo.Empleado;
-import app.modelo.Candidato;
+import Modelo.Empleado;
+import Modelo.Candidato;
 import java.io.*;
 import java.util.Scanner;
 import java.util.Date;
@@ -10,6 +10,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.BufferedWriter;
+
 public class PersonaArreglo {
 
     private int indice;
@@ -24,7 +25,7 @@ public class PersonaArreglo {
         this.personas[this.indice] = persona;
         this.indice++;
     }
-     public void registrarUsuario(Usuario usuario) {
+    public void registrarUsuario(Usuario usuario) {
         try(PrintWriter pw = new PrintWriter(new FileWriter("usuarios.txt", true))) {
             pw.println(usuario.getCorreo() + "," + usuario.getPassword());
         } catch(IOException e) {
