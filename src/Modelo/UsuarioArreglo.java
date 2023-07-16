@@ -2,12 +2,8 @@
 package Modelo;
 
 import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.Scanner;
 
 public class UsuarioArreglo {
     private int indice;
@@ -32,4 +28,8 @@ public class UsuarioArreglo {
             System.err.println("Error al escribir en el archivo: " + e.getMessage());
         }
     }
+    public void iniciarSesion(String correo, String password){
+        
+    }
+           
 }
