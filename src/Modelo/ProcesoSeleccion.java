@@ -43,4 +43,19 @@ public class ProcesoSeleccion {
 
     public void eliminarPuesto() {
     }
+    public void evaluarCurriculum(Candidato candidato, int puntaje) {
+        candidato.evaluarCurriculum(puntaje);
+    }
+
+    public void evaluarEntrevista(Candidato candidato, int puntaje) {
+        candidato.evaluarEntrevista(puntaje);
+    }
+
+    public boolean pasarAProcesoEntrevista(Candidato candidato) {
+        return candidato.getPuntajeCurriculum() > 7;
+    }
+
+    public boolean pasarContratacion(Candidato candidato) {
+        return candidato.getPuntajeEntrevista() >= 9;
+    }
 }
