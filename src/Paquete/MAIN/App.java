@@ -1,4 +1,4 @@
-package sistema.de.rrhh;
+package Paquete.MAIN;
 /*
 import Modelo.PersonaArreglo;
 import Modelo.Candidato;
@@ -10,9 +10,6 @@ import java.text.SimpleDateFormat;
 */
 
 import Controladores.ControladorLogin;
-import Modelo.Persona;
-import Modelo.PersonaArreglo;
-import Modelo.Usuario;
 import Modelo.UsuarioArreglo;
 import Vista.frmLogin;
 
