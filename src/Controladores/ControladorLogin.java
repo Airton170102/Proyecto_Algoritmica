@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 import Modelo.UsuarioArreglo;
 import Vista.frmLogin;
 import Vista.frmPrincipal;
-import Vista.frmRegistro;
+import Vista.frmRegistroUsuario;
 import javax.swing.JOptionPane;
 
 public class ControladorLogin {
@@ -42,12 +42,12 @@ public class ControladorLogin {
                 limpiarControles();
             }
         });   
-        this.fl.btnRegistro.addActionListener( new ActionListener() {
+        this.fl.btnRegistro.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //Librerias.SerializadoraGen.serializar("Datos", Configuracion.Datos.personas);
                 fl.setVisible(false);
-                frmRegistro fRegistro = new frmRegistro();
+                frmRegistroUsuario fRegistro = new frmRegistroUsuario();
                 ControladorRegistroUsuario controlRegistro = new ControladorRegistroUsuario(ua,fRegistro);
                 controlRegistro.iniciar();
             }
