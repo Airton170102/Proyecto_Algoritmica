@@ -18,7 +18,7 @@ public class Candidato extends Persona {
     private int puntajeCurriculum;
     private int puntajeEntrevista;
 
-    public Candidato(String experiencia, String[] referencia, String certificaciones, String habilidades, String objetivo, boolean Contratofirmado, int id, String nombre, String apellido, Date nacimiento, String direccion, String telefono, String educacion) {
+    public Candidato(String experiencia, String[] referencia, String certificaciones, String habilidades, String objetivo, boolean Contratofirmado, int puntajeCurriculum, int puntajeEntrevista, String id, String nombre, String apellido, String nacimiento, String direccion, String telefono, String educacion) {
         super(id, nombre, apellido, nacimiento, direccion, telefono, educacion);
         this.experiencia = experiencia;
         this.referencia = referencia;
@@ -26,10 +26,10 @@ public class Candidato extends Persona {
         this.habilidades = habilidades;
         this.objetivo = objetivo;
         this.Contratofirmado = Contratofirmado;
-        this.puntajeCurriculum = 0;
-        this.puntajeEntrevista = 0;
+        this.puntajeCurriculum = puntajeCurriculum;
+        this.puntajeEntrevista = puntajeEntrevista;
     }
-
+    
     public String getExperiencia() {
         return experiencia;
     }
