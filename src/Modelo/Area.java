@@ -1,6 +1,8 @@
 package Modelo;
 
-public class Area {
+import java.io.Serializable;
+
+public class Area implements Serializable{
 
     private String nombre;
     private boolean cuenta;

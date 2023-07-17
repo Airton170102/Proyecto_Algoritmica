@@ -1,9 +1,10 @@
 package Modelo;
 
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Contrato {
+public class Contrato implements Serializable{
 
     private String codigo;
     private Date inicio;

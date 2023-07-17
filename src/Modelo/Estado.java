@@ -1,6 +1,8 @@
 package Modelo;
 
-public class Estado {
+import java.io.Serializable;
+
+public class Estado implements Serializable{
 
     private String nombre;
     private boolean disponible;

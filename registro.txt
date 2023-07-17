@@ -1,0 +1,7 @@
+ID: 1
+Nombre: Airton
+Apellido: Collachagua
+Nacimiento: asdaa
+Dirección: 171231
+Teléfono: asdasd
+Educación: sdasd

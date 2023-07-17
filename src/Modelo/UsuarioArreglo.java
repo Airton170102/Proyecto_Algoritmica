@@ -8,9 +8,10 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.Scanner;
 
-public class UsuarioArreglo {
+public class UsuarioArreglo implements Serializable{
     private int indice;
     private Usuario[] usuarios;
 

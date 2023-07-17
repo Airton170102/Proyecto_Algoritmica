@@ -14,20 +14,15 @@ import javax.swing.JOptionPane;
 public class ControladorRegistroCandidato1 {
     Usuario u;
     frmRegistroCandidato1 fRC1;
-
-    public ControladorRegistroCandidato1(Usuario u, frmRegistroCandidato1 fRC1) {
+    Persona persona;
+    public ControladorRegistroCandidato1(Usuario u, frmRegistroCandidato1 fRC1, PersonaArreglo) {
         this.u = u;
         this.fRC1 = fRC1;
+        
         this.fRC1.btnSiguiente.addActionListener( new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String c1 = fRC1.txtID.getText();
-                String c2 = fRC1.txtNombres.getText();
-                String c3 = fRC1.txtApellidos.getText();
-                String c4 = fRC1.txtTelefono.getText();
-                String c5 = fRC1.txtNacimiento.getText();
-                String c6 = fRC1.txtDireccion.getText();
-                String c7 = fRC1.txtEducacion.getText();
+                        persona = new Persona(fRC1.txtID.getText(),fRC1.txtNombres.getText(),fRC1.txtApellidos.getText(),fRC1.txtTelefono.getText(),fRC1.txtNacimiento.getText(),fRC1.txtDireccion.getText(),fRC1.txtDireccion.getText(),fRC1.txtEducacion.getText());
                 if (c1.isEmpty() || c2.isEmpty() || c3.isEmpty() || c4.isEmpty() || c5.isEmpty() || c6.isEmpty() || c7.isEmpty()){
                     JOptionPane.showMessageDialog( fRC1, "Todos los campos deben ser rellenados");
                 }

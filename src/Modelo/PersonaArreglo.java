@@ -11,7 +11,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.BufferedWriter;
 
-public class PersonaArreglo {
+public class PersonaArreglo implements Serializable{
 
     private int indice;
     private Persona[] personas;
@@ -21,9 +21,35 @@ public class PersonaArreglo {
         this.indice = 0;
     }
 
-    public void agregar(Persona persona){
+    
+    public boolean agregar(Persona persona) {
+        boolean result = false;
+        if (lleno()) {
+            crecer();
+        }
         this.personas[this.indice] = persona;
         this.indice++;
+        result = true;
+
+        return result;
+    }
+    
+    public void crecer() {
+        Persona[] nuevo = new Persona[indice * 2];
+        int i = 0;
+        for (Persona obj : this.personas) {
+            nuevo[i] = obj;
+            i++;
+        }
+        this.personas = nuevo;
+    }
+
+    private boolean lleno() {
+        boolean result = false;
+        if (this.indice == this.personas.length) {
+            result = true;
+        }
+        return result;
     }
     public void registrarPersona(Persona persona) {
         try (PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("registro.txt", true)))) {
