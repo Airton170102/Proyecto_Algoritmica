@@ -2,7 +2,7 @@
 package Controladores;
 
 import Vista.frmLogin;
-import Vista.frmRegistro;
+import Vista.frmRegistroUsuario;
 import Modelo.UsuarioArreglo;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,9 +10,9 @@ import javax.swing.JOptionPane;
 
 public class ControladorRegistroUsuario {
     UsuarioArreglo ua;
-    frmRegistro fr;
+    frmRegistroUsuario fr;
 
-    public ControladorRegistroUsuario (UsuarioArreglo ua, frmRegistro fr) {
+    public ControladorRegistroUsuario (UsuarioArreglo ua, frmRegistroUsuario fr) {
         this.ua = ua;
         this.fr = fr;
         this.fr.btnVolver.addActionListener( new ActionListener() {

@@ -26,22 +26,28 @@ public class frmRegistroCandidato2 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        txtCertificaciones = new javax.swing.JTextField();
         lblHabilidades = new javax.swing.JLabel();
         lblCertificaciones = new javax.swing.JLabel();
         lblImagenRegistro = new javax.swing.JLabel();
         lblRegistro = new javax.swing.JLabel();
         lblExperiencia = new javax.swing.JLabel();
+        txtExperiencia = new javax.swing.JTextField();
         lblObjetivo = new javax.swing.JLabel();
         btnVolver2 = new javax.swing.JButton();
         btnRegistrar = new javax.swing.JButton();
         lblContratoFirmado = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
+        txtHabilidades = new javax.swing.JTextField();
+        txtObjetivo = new javax.swing.JTextField();
+        txtContratoFirmado = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        txtCertificaciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCertificacionesActionPerformed(evt);
+            }
+        });
 
         lblHabilidades.setFont(new java.awt.Font("Rockwell", 0, 12)); // NOI18N
         lblHabilidades.setText("HABILIDADES");
@@ -84,7 +90,7 @@ public class frmRegistroCandidato2 extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 142, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(lblRegistro)
                 .addGap(119, 119, 119))
             .addGroup(layout.createSequentialGroup()
@@ -96,14 +102,15 @@ public class frmRegistroCandidato2 extends javax.swing.JFrame {
                             .addComponent(lblExperiencia, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lblHabilidades, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lblCertificaciones, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblContratoFirmado, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addComponent(lblContratoFirmado))
                         .addGap(36, 36, 36)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField1)
-                            .addComponent(jTextField2)
-                            .addComponent(jTextField3)
-                            .addComponent(jTextField4)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 287, Short.MAX_VALUE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtContratoFirmado)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(txtCertificaciones, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 287, Short.MAX_VALUE)
+                                .addComponent(txtExperiencia, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtHabilidades, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtObjetivo, javax.swing.GroupLayout.Alignment.LEADING))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(260, 260, 260)
                         .addComponent(lblImagenRegistro))
@@ -123,33 +130,37 @@ public class frmRegistroCandidato2 extends javax.swing.JFrame {
                 .addComponent(lblImagenRegistro)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblExperiencia)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtExperiencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblExperiencia))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblCertificaciones)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCertificaciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblCertificaciones))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblHabilidades)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtHabilidades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblObjetivo)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtObjetivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblContratoFirmado)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(38, 38, 38)
+                    .addComponent(txtContratoFirmado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnRegistrar)
                     .addComponent(btnVolver2))
-                .addContainerGap(110, Short.MAX_VALUE))
+                .addContainerGap(106, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtCertificacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCertificacionesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCertificacionesActionPerformed
 
     private void btnVolver2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolver2ActionPerformed
         // TODO add your handling code here:
@@ -185,6 +196,7 @@ public class frmRegistroCandidato2 extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(frmRegistroCandidato2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -197,11 +209,6 @@ public class frmRegistroCandidato2 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnRegistrar;
     public javax.swing.JButton btnVolver2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JLabel lblCertificaciones;
     private javax.swing.JLabel lblContratoFirmado;
     private javax.swing.JLabel lblExperiencia;
@@ -209,5 +216,10 @@ public class frmRegistroCandidato2 extends javax.swing.JFrame {
     private javax.swing.JLabel lblImagenRegistro;
     private javax.swing.JLabel lblObjetivo;
     private javax.swing.JLabel lblRegistro;
+    public javax.swing.JTextField txtCertificaciones;
+    public javax.swing.JTextField txtContratoFirmado;
+    public javax.swing.JTextField txtExperiencia;
+    public javax.swing.JTextField txtHabilidades;
+    public javax.swing.JTextField txtObjetivo;
     // End of variables declaration//GEN-END:variables
 }

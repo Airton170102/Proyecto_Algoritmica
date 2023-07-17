@@ -1,19 +1,18 @@
 package Modelo;
 
 
-import java.util.Date;
 
 public class Persona {
 
-    private int id;
+    private String id;
     private String nombre;
     private String apellido;
-    private Date nacimiento;
+    private String nacimiento;
     private String direccion;
     private String telefono;
     private String educacion;
 
-    public Persona(int id, String nombre, String apellido, Date nacimiento, String direccion, String telefono, String educacion) {
+    public Persona(String id, String nombre, String apellido, String nacimiento, String direccion, String telefono, String educacion) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -23,7 +22,7 @@ public class Persona {
         this.educacion = educacion;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
@@ -35,7 +34,7 @@ public class Persona {
         return apellido;
     }
 
-    public Date getNacimiento() {
+    public String getNacimiento() {
         return nacimiento;
     }
 
