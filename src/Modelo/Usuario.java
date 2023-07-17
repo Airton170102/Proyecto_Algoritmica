@@ -14,31 +14,15 @@ public class Usuario {
         return correo;
     }
 
-    public void setCorreo(String correo) {
-        this.correo = correo;
-    }
-
     public String getPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public boolean verificarPassword() {
-        return this.password.equals(password);  
+    public boolean verificarCorreo(String correo) {
+        return this.correo.equals(correo);  
     }
     
-    private boolean verificarCredenciales() {
-        return correo.equals("usuario@example.com") && password.equals("contraseña123");
-    }
-  
-    public void iniciarSesion() {
-        if (verificarCredenciales()) {
-            System.out.println("Inicio de sesión exitoso");
-        } else {
-            System.out.println("Inicio de sesión fallido");
-        }
+    public boolean verificarPassword(String password) {
+        return this.password.equals(password);  
     }
 }
