@@ -1,9 +1,10 @@
 package Modelo;
 
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Postular {
+public class Postular implements Serializable{
 
     private Date fecha;
 

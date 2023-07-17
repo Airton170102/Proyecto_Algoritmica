@@ -1,6 +1,7 @@
 
 package Controladores;
 
+import Modelo.PersonaArreglo;
 import Modelo.Usuario;
 import Vista.frmPrincipal;
 import Vista.frmRegistroCandidato1;
@@ -10,6 +11,7 @@ import java.awt.event.ActionListener;
 public class ControladorPrincipal {
     Usuario u;
     frmPrincipal fp;
+    PersonaArreglo personas = new PersonaArreglo(1);
 
     public ControladorPrincipal(Usuario u, frmPrincipal fp) {
         this.u = u;
@@ -19,7 +21,7 @@ public class ControladorPrincipal {
             public void actionPerformed(ActionEvent e) {
                 fp.setVisible(false);
                 frmRegistroCandidato1 fRC1 = new frmRegistroCandidato1();
-                ControladorRegistroCandidato1 controlRC1 = new ControladorRegistroCandidato1(u,fRC1);
+                ControladorRegistroCandidato1 controlRC1 = new ControladorRegistroCandidato1(u,fRC1,personas);
                 controlRC1.iniciar();
             }
         });

@@ -2,8 +2,9 @@ package Modelo;
 
 
 import Modelo.Estado;
+import java.io.Serializable;
 
-public class EstadoArreglo {
+public class EstadoArreglo implements Serializable {
 
     private int indice;
     private Estado[] estados;

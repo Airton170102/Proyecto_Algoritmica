@@ -1,6 +1,8 @@
 package Modelo;
 
-public class Puesto {
+import java.io.Serializable;
+
+public class Puesto implements Serializable{
 
     private String nombre;
     private double salario;

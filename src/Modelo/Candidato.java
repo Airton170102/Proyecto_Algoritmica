@@ -5,9 +5,10 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.Serializable;
 import java.util.Date;
 
-public class Candidato extends Persona {
+public class Candidato extends Persona implements Serializable {
 
     private String experiencia;
     private String[] referencia;

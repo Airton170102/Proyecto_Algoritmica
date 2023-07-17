@@ -1,8 +1,10 @@
 package Modelo;
 
+import java.io.Serializable;
 
 
-public class Persona {
+
+public class Persona implements Serializable{
 
     private String id;
     private String nombre;

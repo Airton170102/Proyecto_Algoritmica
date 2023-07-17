@@ -2,9 +2,10 @@ package Modelo;
 
 
 import Modelo.Puesto;
+import java.io.Serializable;
 import java.util.Date;
 
-public class ProcesoSeleccion {
+public class ProcesoSeleccion implements Serializable{
 
     private Puesto puesto;
     private Date inicio;

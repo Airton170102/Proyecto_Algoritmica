@@ -12,14 +12,17 @@ import java.text.SimpleDateFormat;
 import Controladores.ControladorLogin;
 import Modelo.UsuarioArreglo;
 import Vista.frmLogin;
+import java.io.Serializable;
+import Vista.frmRegistroCandidato1; 
+import Modelo.PersonaArreglo;
 
-public class App {
+public class App implements Serializable{
      public static void main(String[] args) {
         frmLogin fLogin = new frmLogin();
         UsuarioArreglo arreglo = new UsuarioArreglo(100);
         ControladorLogin controlLogin = new ControladorLogin(arreglo,fLogin);
         controlLogin.iniciar();
-        /* 
+                /* 
         PersonaArreglo personaArreglo = new PersonaArreglo(100); // capacidad para 100 personas
         Scanner scanner = new Scanner(System.in);
         boolean keepRunning = true;

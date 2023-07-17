@@ -2,8 +2,9 @@ package Modelo;
 
 
 import Modelo.Area;
+import java.io.Serializable;
 
-public class AreaArreglo {
+public class AreaArreglo implements Serializable{
 
     private int indice;
     private Area[] areas;
