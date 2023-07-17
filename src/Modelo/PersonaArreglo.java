@@ -25,41 +25,34 @@ public class PersonaArreglo {
         this.personas[this.indice] = persona;
         this.indice++;
     }
-        
-
-    private void escribirEnArchivo(Persona persona) {
-    try {
-        File file = new File("registro.txt");
-        FileWriter fw = new FileWriter(file, true);
-        BufferedWriter bw = new BufferedWriter(fw);
-        PrintWriter pw = new PrintWriter(bw);
-        
-        pw.println("ID: " + persona.getId());
-        pw.println("Nombre: " + persona.getNombre());
-        pw.println("Apellido: " + persona.getApellido());
-        pw.println("Nacimiento: " + persona.getNacimiento());
-        pw.println("Dirección: " + persona.getDireccion());
-        pw.println("Teléfono: " + persona.getTelefono());
-        pw.println("Educación: " + persona.getEducacion());
-        if(persona instanceof Candidato) {
-            Candidato c = (Candidato) persona;
-            pw.println("Experiencia: " + c.getExperiencia());
-            pw.println("Certificaciones: " + c.getCertificaciones());
-            pw.println("Habilidades: " + c.getHabilidades());
-            pw.println("Objetivo: " + c.getObjetivo());
-            pw.println("Contrato Firmado: " + c.isContratoFirmado());
+    public void registrarPersona(Persona persona) {
+        try (PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("registro.txt", true)))) {
+            pw.println("ID: " + persona.getId());
+            pw.println("Nombre: " + persona.getNombre());
+            pw.println("Apellido: " + persona.getApellido());
+            pw.println("Nacimiento: " + persona.getNacimiento());
+            pw.println("Dirección: " + persona.getDireccion());
+            pw.println("Teléfono: " + persona.getTelefono());
+            pw.println("Educación: " + persona.getEducacion());
+        } catch (IOException e) {
+            System.out.println("Error al escribir en el archivo: " + e.getMessage());
         }
-        if(persona instanceof Empleado) {
-            Empleado e = (Empleado) persona;
-            pw.println("Contrato: " + e.getContrato());
-            }
-        pw.println("------");
-
-        pw.close();
-    } catch (IOException e) {
-        System.out.println("An error occurred.");
-        e.printStackTrace();
     }
-}
+    public void registrarCandidato(Candidato candidato) {
+        agregar(candidato);
+        registrarPersona(candidato);
+        try (PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("registro.txt", true)))) {
+            pw.println("Experiencia: " + candidato.getExperiencia());
+            pw.println("Certificaciones: " + candidato.getCertificaciones());
+            pw.println("Habilidades: " + candidato.getHabilidades());
+            pw.println("Objetivo: " + candidato.getObjetivo());
+            pw.println("Contrato Firmado: " + candidato.isContratoFirmado());
+        } catch (IOException e) {
+            System.out.println("Error al escribir en el archivo: " + e.getMessage());
+        }
+    }
+}    
 
-}
+    
+
+
