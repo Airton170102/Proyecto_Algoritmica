@@ -22,18 +22,22 @@ public class PersonaArreglo implements Serializable{
     }
 
     
-    public boolean agregar(Persona persona) {
+    public void agregar(Persona persona) {
+        /*
         boolean result = false;
         if (lleno()) {
             crecer();
         }
+        */
         this.personas[this.indice] = persona;
         this.indice++;
+        /*
         result = true;
 
         return result;
+        */
     }
-    
+    /*
     public void crecer() {
         Persona[] nuevo = new Persona[indice * 2];
         int i = 0;
@@ -77,6 +81,7 @@ public class PersonaArreglo implements Serializable{
             System.out.println("Error al escribir en el archivo: " + e.getMessage());
         }
     }
+*/
 }    
 
     

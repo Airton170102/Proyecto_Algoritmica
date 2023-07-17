@@ -1,12 +1,12 @@
 
 package Controladores;
 
+import Modelo.Candidato;
 import Modelo.Persona;
 import Modelo.PersonaArreglo;
 import Modelo.Usuario;
 import Vista.frmPrincipal;
 import Vista.frmRegistroCandidato1;
-import Vista.frmRegistroCandidato2;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
@@ -14,26 +14,37 @@ import javax.swing.JOptionPane;
 public class ControladorRegistroCandidato1 {
     Usuario u;
     frmRegistroCandidato1 fRC1;
-    Persona persona;
-    public ControladorRegistroCandidato1(Usuario u, frmRegistroCandidato1 fRC1, PersonaArreglo) {
+    
+
+    public ControladorRegistroCandidato1(Usuario u, frmRegistroCandidato1 fRC1) {
         this.u = u;
         this.fRC1 = fRC1;
-        
         this.fRC1.btnSiguiente.addActionListener( new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                        persona = new Persona(fRC1.txtID.getText(),fRC1.txtNombres.getText(),fRC1.txtApellidos.getText(),fRC1.txtTelefono.getText(),fRC1.txtNacimiento.getText(),fRC1.txtDireccion.getText(),fRC1.txtDireccion.getText(),fRC1.txtEducacion.getText());
-                if (c1.isEmpty() || c2.isEmpty() || c3.isEmpty() || c4.isEmpty() || c5.isEmpty() || c6.isEmpty() || c7.isEmpty()){
+                String d1 = fRC1.txtID.getText();
+                String d2 = fRC1.txtNombres.getText();
+                String d3 = fRC1.txtApellidos.getText();
+                String d4 = fRC1.txtNacimiento.getText();
+                String d5 = fRC1.txtDireccion.getText();
+                String d6 = fRC1.txtTelefono.getText();
+                String d7 = fRC1.txtEducacion.getText();
+                String d8 = fRC1.txtExperiencia.getText();
+                String d9 = fRC1.txtCertificaciones.getText();
+                String d10 = fRC1.txtHabilidades.getText();
+                String d11 = fRC1.txtObjetivo.getText();
+                String d12 = fRC1.txtContratoFirmado.getText();
+                if (d1.isEmpty() || d2.isEmpty() || d3.isEmpty() || d4.isEmpty() || d5.isEmpty() || d6.isEmpty() || d7.isEmpty() || d8.isEmpty() || d9.isEmpty() || d10.isEmpty() || d11.isEmpty() || d12.isEmpty()){
                     JOptionPane.showMessageDialog( fRC1, "Todos los campos deben ser rellenados");
                 }
-                else {
-                    PersonaArreglo personas = new PersonaArreglo(100);
-                    Persona persona = new Persona(c1,c2,c3,c4,c5,c6,c7);
-                    personas.registrarPersona(persona);
+                else 
+                {
+                    Candidato candidato = new Candidato(d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12);
+                    candidato.registrarCandidato(d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12);
                     fRC1.setVisible(false);
-                    frmRegistroCandidato2 fRC2 = new frmRegistroCandidato2();
-                    ControladorRegistroCandidato2 controlRC2 = new ControladorRegistroCandidato2(u,fRC2);
-                    controlRC2.iniciar();
+                    frmPrincipal fp = new frmPrincipal();
+                    ControladorPrincipal controlPrincipal = new ControladorPrincipal(u,fp);
+                    controlPrincipal.iniciar();
                 }
             }
         });

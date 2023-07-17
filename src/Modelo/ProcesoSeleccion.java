@@ -44,6 +44,7 @@ public class ProcesoSeleccion implements Serializable{
 
     public void eliminarPuesto() {
     }
+    /*
     public void evaluarCurriculum(Candidato candidato, int puntaje) {
         candidato.evaluarCurriculum(puntaje);
     }
@@ -59,4 +60,5 @@ public class ProcesoSeleccion implements Serializable{
     public boolean pasarContratacion(Candidato candidato) {
         return candidato.getPuntajeEntrevista() >= 9;
     }
+*/
 }

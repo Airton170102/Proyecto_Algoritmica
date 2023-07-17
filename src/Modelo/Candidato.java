@@ -1,87 +1,115 @@
 package Modelo;
 
 
+import Vista.frmPrincipal;
+import Vista.frmRegistroCandidato1;
+import Vista.frmSeleccionCandidatos;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.io.Serializable;
 import java.util.Date;
+import javax.swing.JOptionPane;
+import javax.swing.JTextArea;
 
-public class Candidato extends Persona implements Serializable {
-
+public class Candidato /*extends Persona*/ {
+//Al hacer que la clase Candidato ya no sea hija de Persona, tengo que poner como variable a todos los campos del Registro de Candidato
+    private String id;
+    private String nomnbres;
+    private String apellidos;
+    private String nacimiento;
+    private String direccion;
+    private String telefono;
+    private String educacion;
     private String experiencia;
-    private String[] referencia;
     private String certificaciones;
     private String habilidades;
     private String objetivo;
-    private boolean Contratofirmado;
-    private int puntajeCurriculum;
-    private int puntajeEntrevista;
-
-    public Candidato(String experiencia, String[] referencia, String certificaciones, String habilidades, String objetivo, boolean Contratofirmado, int puntajeCurriculum, int puntajeEntrevista, String id, String nombre, String apellido, String nacimiento, String direccion, String telefono, String educacion) {
-        super(id, nombre, apellido, nacimiento, direccion, telefono, educacion);
+    private String contratoFirmado;
+    
+    
+    public Candidato (String id, String nombres, String apellidos, String nacimiento, String direccion, String telefono, String educacion, String experiencia, String certificaciones, String habilidades, String objetivo, String contratoFirmado)
+    {
+        this.id = id;
+        this.nomnbres = nombres;
+        this.apellidos = apellidos;
+        this.nacimiento = nacimiento;
+        this.direccion = direccion;
+        this.telefono = telefono;
+        this.educacion = educacion;
         this.experiencia = experiencia;
-        this.referencia = referencia;
         this.certificaciones = certificaciones;
         this.habilidades = habilidades;
         this.objetivo = objetivo;
-        this.Contratofirmado = Contratofirmado;
-        this.puntajeCurriculum = puntajeCurriculum;
-        this.puntajeEntrevista = puntajeEntrevista;
+        this.contratoFirmado = contratoFirmado;
     }
     
-    public String getExperiencia() {
-        return experiencia;
+    //No borren esto :v, le hice una SobreCarga al Constructor para poder usar
+    //un Constructor Vacío xd 
+    public Candidato()
+    {
+        
     }
-
-    public String[] getReferencia() {
-        return referencia;
+    
+    public void registrarCandidato(String id, String nombres, String apellidos, String nacimiento, String direccion, String telefono, String educacion, String experiencia, String certificaciones, String habilidades, String objetivo, String contratoFirmado) {
+        String rutaArchivo = "registro.txt";
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(rutaArchivo, true))) {
+            writer.write(id+","+nombres+","+apellidos+","+nacimiento+","+direccion+","+telefono+","+educacion+","+experiencia+","+certificaciones+","+habilidades+","+objetivo+","+contratoFirmado);
+            writer.newLine();
+           
+            frmRegistroCandidato1 frame = new frmRegistroCandidato1();
+            System.out.println("\nDatos guardados en el TXT");
+            JOptionPane.showMessageDialog(frame, "Datos Registrados");
+        } catch (IOException e) {
+            System.err.println("Error al escribir en el archivo: " + e.getMessage());
+        }
     }
-
-    public String getCertificaciones() {
-        return certificaciones;
+    
+    public void mostrarCandidatos(frmSeleccionCandidatos listaCandidatos)
+    {
+        String rutaArchivo = "registro.txt";
+        
+        try (BufferedReader br = new BufferedReader(new FileReader(rutaArchivo))) {
+            String linea;
+            int i = 0;
+            while ((linea = br.readLine()) != null) {
+                String[] datos = linea.split(",");
+                String id = datos[0];
+                String nombres = datos[1];
+                String apellidos = datos[2];
+                String nacimiento = datos[3];
+                String direccion = datos[4];
+                String telefono = datos[5];
+                String educacion = datos[6];
+                String experiencia = datos[7];
+                String certificaciones = datos[8];
+                String habilidades = datos[9];
+                String objetivo = datos[10];
+                String contratoFirmado = datos[11];
+                
+                //Imprimirlo en la Consola es para Probar no más
+                System.out.println("\nCANDIDATO N"+(i+1));
+                System.out.println("ID: "+id+"\nNombres: "+nombres+"\nApellidos: "+apellidos+"\nDireccion: "+direccion+"\nTelefono: "+telefono+"\nEducacion: "+educacion+"\nExperiencia: "+experiencia+"\nCertificacion: "+certificaciones+"\nHabilidades: "+habilidades+"\nObjetivo: "+objetivo+"\nContrato Firmado: "+contratoFirmado);
+               
+                JTextArea txtArea = listaCandidatos.txtListaCandidatos;
+                
+                listaCandidatos.txtListaCandidatos.append("\n\t\tCANDIDATO"+(i+1)+"\n\t"+"ID: "+id+"\n\tNombres: "+nombres+"\n\tApellidos: "+apellidos+"\n\tDireccion: "+direccion+"\n\tTelefono: "+telefono+"\n\tEducacion: "+educacion+"\n\tExperiencia: "+experiencia+"\n\tCertificacion: "+certificaciones+"\n\tHabilidades: "+habilidades+"\n\tObjetivo: "+objetivo+"\n\tContrato Firmado: "+contratoFirmado+"\n");
+                //txtArea.setEditable(false);
+                i++;
+            }
+        } catch (IOException e) {
+            System.err.println("Error al leer el archivo: " + e.getMessage());
+        }
     }
-
-    public String getHabilidades() {
-        return habilidades;
-    }
-
-    public String getObjetivo() {
-        return objetivo;
-    }
-
-    public boolean isContratofirmado() {
-        return Contratofirmado;
-    }
-     public int getPuntajeCurriculum() {
-        return puntajeCurriculum;
-    }
-
-    public int getPuntajeEntrevista() {
-        return puntajeEntrevista;
-    }
-
-    public void evaluarCurriculum(int puntaje) {
-        puntajeCurriculum = puntaje;
-    }
-
-    public void evaluarEntrevista(int puntaje) {
-        puntajeEntrevista = puntaje;
-    }
-
-    public boolean pasarAProcesoEntrevista() {
-        return puntajeCurriculum > 7;
-    }
-
-    public boolean pasarContratacion() {
-        return puntajeEntrevista >= 9;
-    }
-
-    String isContratoFirmado() {
+    
+    public void setVisible(boolean b) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    }
+}
     
     
 
