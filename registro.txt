@@ -1,1 +1,2 @@
 01,Alvaro,Escudero,17/7/2003,Los Olivos,980243987,Primaria,Ninguna,Ya sabes ya,Si, eso,Aprobar,Si
+07,Pedro,Picapiedra,05/12/1091,Piedra,123456789,Inicial,150 años,Ninguna,Construir,Trabajar,Gerente

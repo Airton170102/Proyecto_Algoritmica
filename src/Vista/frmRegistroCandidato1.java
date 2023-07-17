@@ -39,7 +39,7 @@ public class frmRegistroCandidato1 extends javax.swing.JFrame {
         lblContratoFirmado = new javax.swing.JLabel();
         txtHabilidades = new javax.swing.JTextField();
         txtObjetivo = new javax.swing.JTextField();
-        txtContratoFirmado = new javax.swing.JTextField();
+        txtPuestoaPostular = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 204, 204));
@@ -142,7 +142,7 @@ public class frmRegistroCandidato1 extends javax.swing.JFrame {
         lblObjetivo.setText("OBJETIVO");
 
         lblContratoFirmado.setFont(new java.awt.Font("Rockwell", 0, 12)); // NOI18N
-        lblContratoFirmado.setText("CONTRATO FIRMADO");
+        lblContratoFirmado.setText("PUESTO A POSTULAR");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -202,7 +202,7 @@ public class frmRegistroCandidato1 extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(160, 160, 160)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtContratoFirmado, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtPuestoaPostular, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtHabilidades, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtObjetivo, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(layout.createSequentialGroup()
@@ -289,7 +289,7 @@ public class frmRegistroCandidato1 extends javax.swing.JFrame {
                     .addComponent(lblObjetivo))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtContratoFirmado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtPuestoaPostular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblContratoFirmado))
                 .addGap(46, 46, 46)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -406,7 +406,6 @@ public class frmRegistroCandidato1 extends javax.swing.JFrame {
     private javax.swing.JLabel lblTelefono;
     public javax.swing.JTextField txtApellidos;
     public javax.swing.JTextField txtCertificaciones;
-    public javax.swing.JTextField txtContratoFirmado;
     public javax.swing.JTextField txtDireccion;
     public javax.swing.JTextField txtEducacion;
     public javax.swing.JTextField txtExperiencia;
@@ -415,6 +414,7 @@ public class frmRegistroCandidato1 extends javax.swing.JFrame {
     public javax.swing.JTextField txtNacimiento;
     public javax.swing.JTextField txtNombres;
     public javax.swing.JTextField txtObjetivo;
+    public javax.swing.JTextField txtPuestoaPostular;
     public javax.swing.JTextField txtTelefono;
     // End of variables declaration//GEN-END:variables
 }

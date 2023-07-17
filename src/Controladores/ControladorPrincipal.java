@@ -31,12 +31,9 @@ public class ControladorPrincipal {
                 
                 fp.setVisible(false);
                 Candidato cand = new Candidato();
-                
                 frmSeleccionCandidatos fSC = new frmSeleccionCandidatos();
-                
-                fSC.setVisible(true);
-                fSC.setLocationRelativeTo(null);//Centrarr el JFrame
-                
+                ControladorSeleccionCandidato controlSC = new ControladorSeleccionCandidato(u,fSC);
+                controlSC.iniciar();
                 cand.mostrarCandidatos(fSC); //Muestra Candidatos en el TXT
 
             }

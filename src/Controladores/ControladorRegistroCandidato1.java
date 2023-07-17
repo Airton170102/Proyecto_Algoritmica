@@ -33,7 +33,7 @@ public class ControladorRegistroCandidato1 {
                 String d9 = fRC1.txtCertificaciones.getText();
                 String d10 = fRC1.txtHabilidades.getText();
                 String d11 = fRC1.txtObjetivo.getText();
-                String d12 = fRC1.txtContratoFirmado.getText();
+                String d12 = fRC1.txtPuestoaPostular.getText();
                 if (d1.isEmpty() || d2.isEmpty() || d3.isEmpty() || d4.isEmpty() || d5.isEmpty() || d6.isEmpty() || d7.isEmpty() || d8.isEmpty() || d9.isEmpty() || d10.isEmpty() || d11.isEmpty() || d12.isEmpty()){
                     JOptionPane.showMessageDialog( fRC1, "Todos los campos deben ser rellenados");
                 }

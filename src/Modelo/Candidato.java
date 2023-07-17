@@ -29,10 +29,10 @@ public class Candidato /*extends Persona*/ {
     private String certificaciones;
     private String habilidades;
     private String objetivo;
-    private String contratoFirmado;
+    private String puestoaPostular;
     
     
-    public Candidato (String id, String nombres, String apellidos, String nacimiento, String direccion, String telefono, String educacion, String experiencia, String certificaciones, String habilidades, String objetivo, String contratoFirmado)
+    public Candidato (String id, String nombres, String apellidos, String nacimiento, String direccion, String telefono, String educacion, String experiencia, String certificaciones, String habilidades, String objetivo, String puestoaPostular)
     {
         this.id = id;
         this.nomnbres = nombres;
@@ -45,7 +45,7 @@ public class Candidato /*extends Persona*/ {
         this.certificaciones = certificaciones;
         this.habilidades = habilidades;
         this.objetivo = objetivo;
-        this.contratoFirmado = contratoFirmado;
+        this.puestoaPostular = puestoaPostular;
     }
     
     //No borren esto :v, le hice una SobreCarga al Constructor para poder usar
@@ -55,10 +55,10 @@ public class Candidato /*extends Persona*/ {
         
     }
     
-    public void registrarCandidato(String id, String nombres, String apellidos, String nacimiento, String direccion, String telefono, String educacion, String experiencia, String certificaciones, String habilidades, String objetivo, String contratoFirmado) {
+    public void registrarCandidato(String id, String nombres, String apellidos, String nacimiento, String direccion, String telefono, String educacion, String experiencia, String certificaciones, String habilidades, String objetivo, String puestoaPostular) {
         String rutaArchivo = "registro.txt";
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(rutaArchivo, true))) {
-            writer.write(id+","+nombres+","+apellidos+","+nacimiento+","+direccion+","+telefono+","+educacion+","+experiencia+","+certificaciones+","+habilidades+","+objetivo+","+contratoFirmado);
+            writer.write(id+","+nombres+","+apellidos+","+nacimiento+","+direccion+","+telefono+","+educacion+","+experiencia+","+certificaciones+","+habilidades+","+objetivo+","+puestoaPostular);
             writer.newLine();
            
             frmRegistroCandidato1 frame = new frmRegistroCandidato1();
@@ -89,15 +89,15 @@ public class Candidato /*extends Persona*/ {
                 String certificaciones = datos[8];
                 String habilidades = datos[9];
                 String objetivo = datos[10];
-                String contratoFirmado = datos[11];
+                String puestoaPostular = datos[11];
                 
                 //Imprimirlo en la Consola es para Probar no más
                 System.out.println("\nCANDIDATO N"+(i+1));
-                System.out.println("ID: "+id+"\nNombres: "+nombres+"\nApellidos: "+apellidos+"\nDireccion: "+direccion+"\nTelefono: "+telefono+"\nEducacion: "+educacion+"\nExperiencia: "+experiencia+"\nCertificacion: "+certificaciones+"\nHabilidades: "+habilidades+"\nObjetivo: "+objetivo+"\nContrato Firmado: "+contratoFirmado);
+                System.out.println("ID: "+id+"\nNombres: "+nombres+"\nApellidos: "+apellidos+"\nDireccion: "+direccion+"\nTelefono: "+telefono+"\nEducacion: "+educacion+"\nExperiencia: "+experiencia+"\nCertificacion: "+certificaciones+"\nHabilidades: "+habilidades+"\nObjetivo: "+objetivo+"\nPuesto a postular: "+puestoaPostular);
                
                 JTextArea txtArea = listaCandidatos.txtListaCandidatos;
                 
-                listaCandidatos.txtListaCandidatos.append("\n\t\tCANDIDATO"+(i+1)+"\n\t"+"ID: "+id+"\n\tNombres: "+nombres+"\n\tApellidos: "+apellidos+"\n\tDireccion: "+direccion+"\n\tTelefono: "+telefono+"\n\tEducacion: "+educacion+"\n\tExperiencia: "+experiencia+"\n\tCertificacion: "+certificaciones+"\n\tHabilidades: "+habilidades+"\n\tObjetivo: "+objetivo+"\n\tContrato Firmado: "+contratoFirmado+"\n");
+                listaCandidatos.txtListaCandidatos.append("\n\t\tCANDIDATO"+(i+1)+"\n\t"+"ID: "+id+"\n\tNombres: "+nombres+"\n\tApellidos: "+apellidos+"\n\tDireccion: "+direccion+"\n\tTelefono: "+telefono+"\n\tEducacion: "+educacion+"\n\tExperiencia: "+experiencia+"\n\tCertificacion: "+certificaciones+"\n\tHabilidades: "+habilidades+"\n\tObjetivo: "+objetivo+"\n\tPuesto a postular: "+puestoaPostular+"\n");
                 //txtArea.setEditable(false);
                 i++;
             }

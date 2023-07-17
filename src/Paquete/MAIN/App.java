@@ -35,8 +35,8 @@ public class App implements Serializable{
         que está dentro del Evento al dar CLICK al boton Agregar
         */
         frmSeleccionCandidatos seleccion = new frmSeleccionCandidatos();
-        ControladorSeleccionCandidato controlSeleccionCandidato = new ControladorSeleccionCandidato(seleccion);
-        
+        ControladorSeleccionCandidato controlSeleccionCandidato = new ControladorSeleccionCandidato(null, seleccion);
+      
         
         /*
         ¿QUÉ FALTA?
