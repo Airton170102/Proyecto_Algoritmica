@@ -16,7 +16,7 @@ import Vista.frmLogin;
 public class App {
      public static void main(String[] args) {
         frmLogin fLogin = new frmLogin();
-        UsuarioArreglo arreglo = new UsuarioArreglo(10);
+        UsuarioArreglo arreglo = new UsuarioArreglo(100);
         ControladorLogin controlLogin = new ControladorLogin(arreglo,fLogin);
         controlLogin.iniciar();
         /* 

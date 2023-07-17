@@ -1,16 +1,38 @@
 
 package Controladores;
 
-import Modelo.UsuarioArreglo;
+import Modelo.Usuario;
 import Vista.frmPrincipal;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class ControladorPrincipal {
-    UsuarioArreglo ua;
+    Usuario u;
     frmPrincipal fp;
 
-    public ControladorPrincipal(UsuarioArreglo ua, frmPrincipal fp) {
-        this.ua = ua;
+    public ControladorPrincipal(Usuario u, frmPrincipal fp) {
+        this.u = u;
         this.fp = fp;
+        this.fp.btnRegistro.addActionListener( new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                fp.setVisible(false);
+                
+            }
+        });
+        this.fp.btnSeleccion.addActionListener( new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                fp.setVisible(false);
+            }
+        });
+        this.fp.btnEmpleados.addActionListener( new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                fp.setVisible(false);
+            }
+        });
+        
     }
     
     public void iniciar(){

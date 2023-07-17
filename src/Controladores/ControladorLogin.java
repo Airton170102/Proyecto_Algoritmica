@@ -1,12 +1,14 @@
 
 package Controladores;
 
+import Modelo.Usuario;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import Modelo.UsuarioArreglo;
 import Vista.frmLogin;
 import Vista.frmPrincipal;
 import Vista.frmRegistro;
+import javax.swing.JOptionPane;
 
 public class ControladorLogin {
     UsuarioArreglo ua;
@@ -18,20 +20,27 @@ public class ControladorLogin {
         this.fl.btnSalir.addActionListener( new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //Librerias.SerializadoraGen.serializar("Datos", Configuracion.Datos.personas);
                 System.exit(0);
             }
         });
         this.fl.btnIngresar.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-                //Librerias.SerializadoraGen.serializar("Datos", Configuracion.Datos.personas);
-                fl.setVisible(false);
-                frmPrincipal fPrincipal = new frmPrincipal();
-                ControladorPrincipal controlPrincipal = new ControladorPrincipal(ua,fPrincipal);
-                controlPrincipal.iniciar();
+                String c = fl.txtCorreo.getText();
+                String p = new String(fl.txtPassword.getPassword());
+                if (ua.exist(fl.txtCorreo.getText(), new String(fl.txtPassword.getPassword()))) {
+                    JOptionPane.showMessageDialog( fl, "Ingreso de sesion exitoso");
+                    fl.setVisible(false);
+                    frmPrincipal fPrincipal = new frmPrincipal();
+                    Usuario u = new Usuario(c,p);
+                    ControladorPrincipal controlPrincipal = new ControladorPrincipal(u,fPrincipal);
+                    controlPrincipal.iniciar();
+                }
+                else {
+                    JOptionPane.showMessageDialog( fl, "Credencial de correo invalida");
+                }
+                limpiarControles();
             }
-        
         });   
         this.fl.btnRegistro.addActionListener( new ActionListener() {
             @Override
@@ -39,7 +48,7 @@ public class ControladorLogin {
                 //Librerias.SerializadoraGen.serializar("Datos", Configuracion.Datos.personas);
                 fl.setVisible(false);
                 frmRegistro fRegistro = new frmRegistro();
-                ControladorRegistro controlRegistro = new ControladorRegistro(ua,fRegistro);
+                ControladorRegistroUsuario controlRegistro = new ControladorRegistroUsuario(ua,fRegistro);
                 controlRegistro.iniciar();
             }
         });
