@@ -44,9 +44,6 @@ public class Contrato implements Serializable{
 
     public String getDescripcion() {
         return descripcion;
-    }
-    
-    
-     
+    }   
     
 }

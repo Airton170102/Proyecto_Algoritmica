@@ -16,7 +16,6 @@ public class Postular implements Serializable{
         return fecha;
     }
     
-
     public void contratarCandidato() {
     }
 
