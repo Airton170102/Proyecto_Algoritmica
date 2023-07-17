@@ -68,7 +68,7 @@ public class UsuarioArreglo implements Serializable{
                     String password = partes[1].trim();
                     usuarios[i] = new Usuario(correo, password);
                     i++;
-                    System.out.println(correo+" "+password);
+                    //System.out.println(correo+" "+password);
                 }
             }
             indice = i;
