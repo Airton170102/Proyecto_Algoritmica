@@ -2,7 +2,7 @@ package Paquete.MAIN;
 
 import Controladores.ControladorLogin;
 import Controladores.ControladorPrincipal;
-import Controladores.ControladorRegistroCandidato1;
+import Controladores.ControladorRegistroCandidato;
 import Controladores.ControladorSeleccionCandidato;
 import Modelo.UsuarioArreglo;
 import Vista.frmLogin;
@@ -20,7 +20,7 @@ public class App implements Serializable{
         
         //ESTO ES PARA GUARDAR LOS DATOS DEL CANDIDATO
         frmRegistroCandidato1 candidato = new frmRegistroCandidato1();
-        ControladorRegistroCandidato1 controlCandidato = new ControladorRegistroCandidato1(null,candidato); // Acá el primer parámetro deberia ser un  objeto de la clase Usuario, pero le puse null
+        ControladorRegistroCandidato controlCandidato = new ControladorRegistroCandidato(null,candidato); // Acá el primer parámetro deberia ser un  objeto de la clase Usuario, pero le puse null
         
         //ESTO ES PARA MOSTRAR LOS DATOS DE TODOS LOS CANDIDATOS
         
