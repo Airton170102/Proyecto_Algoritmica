@@ -186,6 +186,7 @@ public class frmPrincipal extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(frmPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -206,4 +207,8 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel panFondo;
     private javax.swing.JPanel panTitulo;
     // End of variables declaration//GEN-END:variables
+
+    public void iniciar() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
