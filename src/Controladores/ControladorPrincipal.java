@@ -19,9 +19,8 @@ public class ControladorPrincipal {
             public void actionPerformed(ActionEvent e) {
                 fp.setVisible(false);
                 frmRegistroCandidato1 fRC1 = new frmRegistroCandidato1();
-                ControladorRegistroCandidato1 controlRC1 = new ControladorRegistroCandidato1(,fRC1);
+                ControladorRegistroCandidato1 controlRC1 = new ControladorRegistroCandidato1(u,fRC1);
                 controlRC1.iniciar();
-                
             }
         });
         this.fp.btnSeleccion.addActionListener( new ActionListener() {

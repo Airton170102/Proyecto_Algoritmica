@@ -21,7 +21,6 @@ public class frmRegistroCandidato1 extends javax.swing.JFrame {
 
         btnVolver1 = new javax.swing.JButton();
         btnSiguiente = new javax.swing.JButton();
-        txtApellidos = new javax.swing.JPasswordField();
         txtNombres = new javax.swing.JTextField();
         lblApellidos = new javax.swing.JLabel();
         lblNombres = new javax.swing.JLabel();
@@ -30,13 +29,14 @@ public class frmRegistroCandidato1 extends javax.swing.JFrame {
         lblID = new javax.swing.JLabel();
         txtID = new javax.swing.JTextField();
         lblNacimiento = new javax.swing.JLabel();
-        txtTelefono = new javax.swing.JPasswordField();
         lblDireccion = new javax.swing.JLabel();
-        txtNacimiento = new javax.swing.JPasswordField();
         lblTelefono = new javax.swing.JLabel();
-        txtDireccion = new javax.swing.JPasswordField();
         lblEducacion = new javax.swing.JLabel();
-        txtEducacion = new javax.swing.JPasswordField();
+        txtNacimiento = new javax.swing.JTextField();
+        txtApellidos = new javax.swing.JTextField();
+        txtTelefono = new javax.swing.JTextField();
+        txtDireccion = new javax.swing.JTextField();
+        txtEducacion = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 204, 204));
@@ -55,12 +55,6 @@ public class frmRegistroCandidato1 extends javax.swing.JFrame {
         btnSiguiente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSiguienteActionPerformed(evt);
-            }
-        });
-
-        txtApellidos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtApellidosActionPerformed(evt);
             }
         });
 
@@ -87,14 +81,14 @@ public class frmRegistroCandidato1 extends javax.swing.JFrame {
         lblNacimiento.setFont(new java.awt.Font("Rockwell", 0, 12)); // NOI18N
         lblNacimiento.setText("NACIMIENTO");
 
-        txtTelefono.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtTelefonoActionPerformed(evt);
-            }
-        });
-
         lblDireccion.setFont(new java.awt.Font("Rockwell", 0, 12)); // NOI18N
         lblDireccion.setText("DIRECCIÓN");
+
+        lblTelefono.setFont(new java.awt.Font("Rockwell", 0, 12)); // NOI18N
+        lblTelefono.setText("TELÉFONO");
+
+        lblEducacion.setFont(new java.awt.Font("Rockwell", 0, 12)); // NOI18N
+        lblEducacion.setText("EDUCACIÓN");
 
         txtNacimiento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,17 +96,23 @@ public class frmRegistroCandidato1 extends javax.swing.JFrame {
             }
         });
 
-        lblTelefono.setFont(new java.awt.Font("Rockwell", 0, 12)); // NOI18N
-        lblTelefono.setText("TELÉFONO");
+        txtApellidos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtApellidosActionPerformed(evt);
+            }
+        });
+
+        txtTelefono.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTelefonoActionPerformed(evt);
+            }
+        });
 
         txtDireccion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtDireccionActionPerformed(evt);
             }
         });
-
-        lblEducacion.setFont(new java.awt.Font("Rockwell", 0, 12)); // NOI18N
-        lblEducacion.setText("EDUCACIÓN");
 
         txtEducacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -128,33 +128,29 @@ public class frmRegistroCandidato1 extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(layout.createSequentialGroup()
-                            .addComponent(lblDireccion)
+                            .addGap(84, 84, 84)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(lblTelefono)
+                                .addComponent(lblEducacion))
                             .addGap(36, 36, 36)
-                            .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(70, 70, 70)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(lblNacimiento)
-                                    .addComponent(lblID)
-                                    .addComponent(lblApellidos)
-                                    .addComponent(lblNombres))
-                                .addGap(36, 36, 36)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(txtNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(txtNombres, javax.swing.GroupLayout.DEFAULT_SIZE, 287, Short.MAX_VALUE)
-                                        .addComponent(txtApellidos)
-                                        .addComponent(txtID))))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(52, 52, 52)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(lblEducacion)
-                                    .addComponent(lblTelefono))
-                                .addGap(36, 36, 36)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtEducacion, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtEducacion, javax.swing.GroupLayout.DEFAULT_SIZE, 287, Short.MAX_VALUE)
+                                .addComponent(txtTelefono)))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(0, 0, Short.MAX_VALUE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(lblNacimiento, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(lblID, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(lblApellidos, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(lblNombres, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(lblDireccion, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addGap(36, 36, 36)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(txtDireccion)
+                                .addComponent(txtNombres, javax.swing.GroupLayout.DEFAULT_SIZE, 287, Short.MAX_VALUE)
+                                .addComponent(txtID)
+                                .addComponent(txtNacimiento, javax.swing.GroupLayout.DEFAULT_SIZE, 287, Short.MAX_VALUE)
+                                .addComponent(txtApellidos, javax.swing.GroupLayout.DEFAULT_SIZE, 287, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(260, 260, 260)
                         .addComponent(lblImagenRegistro))
@@ -166,7 +162,7 @@ public class frmRegistroCandidato1 extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(142, 142, 142)
                         .addComponent(lblRegistro)))
-                .addContainerGap(114, Short.MAX_VALUE))
+                .addGap(104, 104, 104))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -187,16 +183,16 @@ public class frmRegistroCandidato1 extends javax.swing.JFrame {
                             .addComponent(lblNombres))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblApellidos))
+                            .addComponent(lblApellidos)
+                            .addComponent(txtApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblNacimiento)
                             .addComponent(txtNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblDireccion))
+                            .addComponent(lblDireccion)
+                            .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(12, 12, 12)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblTelefono)
@@ -229,6 +225,10 @@ public class frmRegistroCandidato1 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNombresActionPerformed
 
+    private void txtNacimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNacimientoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNacimientoActionPerformed
+
     private void txtApellidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtApellidosActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtApellidosActionPerformed
@@ -236,10 +236,6 @@ public class frmRegistroCandidato1 extends javax.swing.JFrame {
     private void txtTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefonoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTelefonoActionPerformed
-
-    private void txtNacimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNacimientoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNacimientoActionPerformed
 
     private void txtDireccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDireccionActionPerformed
         // TODO add your handling code here:
@@ -303,12 +299,12 @@ public class frmRegistroCandidato1 extends javax.swing.JFrame {
     private javax.swing.JLabel lblNombres;
     private javax.swing.JLabel lblRegistro;
     private javax.swing.JLabel lblTelefono;
-    public javax.swing.JPasswordField txtApellidos;
-    public javax.swing.JPasswordField txtDireccion;
-    public javax.swing.JPasswordField txtEducacion;
-    private javax.swing.JTextField txtID;
-    public javax.swing.JPasswordField txtNacimiento;
+    public javax.swing.JTextField txtApellidos;
+    public javax.swing.JTextField txtDireccion;
+    public javax.swing.JTextField txtEducacion;
+    public javax.swing.JTextField txtID;
+    public javax.swing.JTextField txtNacimiento;
     public javax.swing.JTextField txtNombres;
-    public javax.swing.JPasswordField txtTelefono;
+    public javax.swing.JTextField txtTelefono;
     // End of variables declaration//GEN-END:variables
 }
