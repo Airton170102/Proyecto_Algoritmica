@@ -7,7 +7,7 @@ import Controladores.ControladorSeleccionCandidato;
 import Modelo.UsuarioArreglo;
 import Vista.frmLogin;
 import java.io.Serializable;
-import Vista.frmRegistroCandidato1;
+import Vista.frmRegistroCandidato;
 import Vista.frmPrincipal;
 import Vista.frmSeleccionCandidatos;
 
@@ -19,7 +19,7 @@ public class App implements Serializable{
         controlLogin.iniciar();
         
         //ESTO ES PARA GUARDAR LOS DATOS DEL CANDIDATO
-        frmRegistroCandidato1 candidato = new frmRegistroCandidato1();
+        frmRegistroCandidato candidato = new frmRegistroCandidato();
         ControladorRegistroCandidato controlCandidato = new ControladorRegistroCandidato(null,candidato); // Acá el primer parámetro deberia ser un  objeto de la clase Usuario, pero le puse null
         
         //ESTO ES PARA MOSTRAR LOS DATOS DE TODOS LOS CANDIDATOS

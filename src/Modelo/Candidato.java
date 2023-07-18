@@ -2,7 +2,7 @@ package Modelo;
 
 
 import Vista.frmPrincipal;
-import Vista.frmRegistroCandidato1;
+import Vista.frmRegistroCandidato;
 import Vista.frmSeleccionCandidatos;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -61,7 +61,7 @@ public class Candidato /*extends Persona*/ {
             writer.write(id+","+nombres+","+apellidos+","+nacimiento+","+direccion+","+telefono+","+educacion+","+experiencia+","+certificaciones+","+habilidades+","+objetivo+","+puestoaPostular);
             writer.newLine();
            
-            frmRegistroCandidato1 frame = new frmRegistroCandidato1();
+            frmRegistroCandidato frame = new frmRegistroCandidato();
             System.out.println("\nDatos guardados en el TXT");
             JOptionPane.showMessageDialog(frame, "Datos Registrados");
         } catch (IOException e) {
