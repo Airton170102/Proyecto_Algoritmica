@@ -4,7 +4,7 @@ package Controladores;
 import Modelo.Candidato;
 import Modelo.Usuario;
 import Vista.frmPrincipal;
-import Vista.frmRegistroCandidato1;
+import Vista.frmRegistroCandidato;
 import Vista.frmSeleccionCandidatos;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -16,11 +16,17 @@ public class ControladorPrincipal {
     public ControladorPrincipal(Usuario u, frmPrincipal fp) {
         this.u = u;
         this.fp = fp;
-        this.fp.btnRegistro.addActionListener( new ActionListener() {
+        this.fp.btnSalir.addActionListener( new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        });
+        this.fp.btnRegistro.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 fp.setVisible(false);
-                frmRegistroCandidato1 fRC1 = new frmRegistroCandidato1();
+                frmRegistroCandidato fRC1 = new frmRegistroCandidato();
                 ControladorRegistroCandidato controlRC1 = new ControladorRegistroCandidato(u,fRC1);
                 controlRC1.iniciar();
             }

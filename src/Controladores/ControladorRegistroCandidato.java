@@ -4,17 +4,17 @@ package Controladores;
 import Modelo.Candidato;
 import Modelo.Usuario;
 import Vista.frmPrincipal;
-import Vista.frmRegistroCandidato1;
+import Vista.frmRegistroCandidato;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
 public class ControladorRegistroCandidato {
     Usuario u;
-    frmRegistroCandidato1 fRC1;
+    frmRegistroCandidato fRC1;
     
 
-    public ControladorRegistroCandidato(Usuario u, frmRegistroCandidato1 fRC1) {
+    public ControladorRegistroCandidato(Usuario u, frmRegistroCandidato fRC1) {
         this.u = u;
         this.fRC1 = fRC1;
         this.fRC1.btnSiguiente.addActionListener( new ActionListener() {
