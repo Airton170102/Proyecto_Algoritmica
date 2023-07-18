@@ -3,13 +3,10 @@ package Modelo;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Serializable;
-import java.util.Scanner;
 
 public class UsuarioArreglo implements Serializable{
     private int indice;
@@ -20,7 +17,8 @@ public class UsuarioArreglo implements Serializable{
         this.indice = 0;
         loadRegistros();
     }
-
+    
+    
     public void agregar(Usuario usuario){
         this.usuarios[this.indice] = usuario;
         this.indice++;
@@ -28,34 +26,16 @@ public class UsuarioArreglo implements Serializable{
     
     public void registrarCorreoYPassword(String correo, String password) {
         String rutaArchivo = "correos.txt";
+        
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(rutaArchivo, true))) {
             writer.write(correo + "," + password);
             writer.newLine();
+            agregar(new Usuario(correo, password));
         } catch (IOException e) {
             System.err.println("Error al escribir en el archivo: " + e.getMessage());
         }
     }
-    /*
-    public boolean iniciarSesion(String correo, String password) {
-        String rutaArchivo = "correos.txt";
-        try (Scanner scanner = new Scanner(new File(rutaArchivo))) {
-            while (scanner.hasNextLine()) {
-                String linea = scanner.nextLine();
-                String[] datos = linea.split(",");
-                if (datos.length == 2) {
-                    String correoGuardado = datos[0];
-                    String passwordGuardado = datos[1];
-                    if (correo.equals(correoGuardado) && password.equals(passwordGuardado)) {
-                        return true; 
-                    }
-                }
-            }
-        } catch (FileNotFoundException e) {
-            System.err.println("Archivo de correos no encontrado: " + e.getMessage());
-        }
-        return false;
-    }
-*/
+
     public void loadRegistros() {
         String rutaArchivo = "correos.txt";
         try (BufferedReader reader = new BufferedReader(new FileReader(rutaArchivo))) {

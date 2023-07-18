@@ -2,7 +2,11 @@
 package Controladores;
 
 import Modelo.Candidato;
+import Modelo.ContratarCandidato;
+import Modelo.ListaEmpleados;
 import Modelo.Usuario;
+import Vista.frmContratarCandidatos;
+import Vista.frmListaEmpleados;
 import Vista.frmPrincipal;
 import Vista.frmRegistroCandidato1;
 import Vista.frmSeleccionCandidatos;
@@ -16,7 +20,7 @@ public class ControladorPrincipal {
     public ControladorPrincipal(Usuario u, frmPrincipal fp) {
         this.u = u;
         this.fp = fp;
-          this.fp.btnSalir.addActionListener( new ActionListener() {
+        this.fp.btnSalir.addActionListener( new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.exit(0);
@@ -27,7 +31,7 @@ public class ControladorPrincipal {
             public void actionPerformed(ActionEvent e) {
                 fp.setVisible(false);
                 frmRegistroCandidato1 fRC1 = new frmRegistroCandidato1();
-                ControladorRegistroCandidato controlRC1 = new ControladorRegistroCandidato(u,fRC1);
+                ControladorRegistroCandidato1 controlRC1 = new ControladorRegistroCandidato1(u,fRC1);
                 controlRC1.iniciar();
             }
         });
@@ -44,10 +48,27 @@ public class ControladorPrincipal {
 
             }
         });
+        this.fp.btnContratarCandidatos.addActionListener( new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                fp.setVisible(false);
+                ContratarCandidato contratar = new ContratarCandidato();
+                frmContratarCandidatos frmCC = new frmContratarCandidatos();
+                ControladorContratarCandidatos controlCC = new ControladorContratarCandidatos(u,frmCC);
+                contratar.mostrarCandidatosContratar(frmCC);
+                controlCC.iniciar();
+            }   
+            
+        });
         this.fp.btnEmpleados.addActionListener( new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 fp.setVisible(false);
+                frmListaEmpleados frLE = new frmListaEmpleados();
+                ListaEmpleados empleado = new ListaEmpleados();
+                ControladorListaEmpleados controlLE = new ControladorListaEmpleados(u,frLE);
+                empleado.mostrarEmpleados(frLE);
+                controlLE.iniciar();
             }
         });
         

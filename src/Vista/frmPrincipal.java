@@ -22,7 +22,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         btnRegistro = new javax.swing.JButton();
         btnSeleccion = new javax.swing.JButton();
         btnEmpleados = new javax.swing.JButton();
-        btnCandidatosEntrevista = new javax.swing.JButton();
+        btnContratarCandidatos = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -43,16 +43,17 @@ public class frmPrincipal extends javax.swing.JFrame {
         panTituloLayout.setHorizontalGroup(
             panTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panTituloLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(panTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panTituloLayout.createSequentialGroup()
+                    .addGroup(panTituloLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(lblImagen)
-                        .addGap(128, 128, 128)
-                        .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panTituloLayout.createSequentialGroup()
+                        .addGap(137, 137, 137)
+                        .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panTituloLayout.createSequentialGroup()
+                        .addGap(126, 126, 126)
                         .addComponent(lblTitulo)
-                        .addGap(132, 132, 132))))
+                        .addGap(0, 133, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         panTituloLayout.setVerticalGroup(
             panTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -93,34 +94,40 @@ public class frmPrincipal extends javax.swing.JFrame {
             }
         });
 
-        btnCandidatosEntrevista.setFont(new java.awt.Font("Rockwell Extra Bold", 0, 12)); // NOI18N
-        btnCandidatosEntrevista.setText("CANDIDATOS A ENTREVISTAR");
+        btnContratarCandidatos.setFont(new java.awt.Font("Rockwell Extra Bold", 0, 12)); // NOI18N
+        btnContratarCandidatos.setText("CONTRATAR CANDIDATOS");
+        btnContratarCandidatos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnContratarCandidatosActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panControlesLayout = new javax.swing.GroupLayout(panControles);
         panControles.setLayout(panControlesLayout);
         panControlesLayout.setHorizontalGroup(
             panControlesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panControlesLayout.createSequentialGroup()
-                .addGap(100, 100, 100)
-                .addGroup(panControlesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnEmpleados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnSeleccion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnRegistro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnCandidatosEntrevista, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(95, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panControlesLayout.createSequentialGroup()
+                .addContainerGap(104, Short.MAX_VALUE)
+                .addGroup(panControlesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(panControlesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(btnContratarCandidatos)
+                        .addComponent(btnSeleccion)))
+                .addGap(100, 100, 100))
         );
         panControlesLayout.setVerticalGroup(
             panControlesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panControlesLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(15, 15, 15)
                 .addComponent(btnRegistro)
                 .addGap(18, 18, 18)
                 .addComponent(btnSeleccion)
                 .addGap(18, 18, 18)
-                .addComponent(btnCandidatosEntrevista)
+                .addComponent(btnContratarCandidatos)
                 .addGap(18, 18, 18)
                 .addComponent(btnEmpleados)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout panFondoLayout = new javax.swing.GroupLayout(panFondo);
@@ -136,8 +143,8 @@ public class frmPrincipal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(panTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(panControles, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addComponent(panControles, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -166,6 +173,10 @@ public class frmPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEmpleadosActionPerformed
 
+    private void btnContratarCandidatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContratarCandidatosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnContratarCandidatosActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -193,6 +204,8 @@ public class frmPrincipal extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -203,7 +216,7 @@ public class frmPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCandidatosEntrevista;
+    public javax.swing.JButton btnContratarCandidatos;
     public javax.swing.JButton btnEmpleados;
     public javax.swing.JButton btnRegistro;
     public javax.swing.JButton btnSalir;
