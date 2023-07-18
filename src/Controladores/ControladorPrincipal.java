@@ -2,7 +2,11 @@
 package Controladores;
 
 import Modelo.Candidato;
+import Modelo.ContratarCandidato;
+import Modelo.ListaEmpleados;
 import Modelo.Usuario;
+import Vista.frmContratarCandidatos;
+import Vista.frmListaEmpleados;
 import Vista.frmPrincipal;
 import Vista.frmRegistroCandidato1;
 import Vista.frmSeleccionCandidatos;
@@ -44,10 +48,27 @@ public class ControladorPrincipal {
 
             }
         });
+        this.fp.btnContratarCandidatos.addActionListener( new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                fp.setVisible(false);
+                ContratarCandidato contratar = new ContratarCandidato();
+                frmContratarCandidatos frmCC = new frmContratarCandidatos();
+                ControladorContratarCandidatos controlCC = new ControladorContratarCandidatos(u,frmCC);
+                contratar.mostrarCandidatosContratar(frmCC);
+                controlCC.iniciar();
+            }   
+            
+        });
         this.fp.btnEmpleados.addActionListener( new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 fp.setVisible(false);
+                frmListaEmpleados frLE = new frmListaEmpleados();
+                ListaEmpleados empleado = new ListaEmpleados();
+                ControladorListaEmpleados controlLE = new ControladorListaEmpleados(u,frLE);
+                empleado.mostrarEmpleados(frLE);
+                controlLE.iniciar();
             }
         });
         

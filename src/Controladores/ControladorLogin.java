@@ -26,18 +26,22 @@ public class ControladorLogin {
         this.fl.btnIngresar.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-                String c = fl.txtCorreo.getText();
-                String p = new String(fl.txtPassword.getPassword());
-                if (ua.exist(fl.txtCorreo.getText(), new String(fl.txtPassword.getPassword()))) {
-                    JOptionPane.showMessageDialog( fl, "Ingreso de sesion exitoso");
+                String correo = fl.txtCorreo.getText();
+                String password = new String(fl.txtPassword.getPassword());
+                
+                
+                if(ua.exist(fl.txtCorreo.getText(), new String(fl.txtPassword.getPassword())))
+                {
+                    JOptionPane.showMessageDialog(fl,"Inicio de Sesion Exitoso");
                     fl.setVisible(false);
                     frmPrincipal fPrincipal = new frmPrincipal();
-                    Usuario u = new Usuario(c,p);
+                    Usuario u = new Usuario(correo, password);
                     ControladorPrincipal controlPrincipal = new ControladorPrincipal(u,fPrincipal);
                     controlPrincipal.iniciar();
                 }
-                else {
-                    JOptionPane.showMessageDialog( fl, "Credencial de correo invalida");
+                else
+                {
+                    JOptionPane.showMessageDialog(fl,"Credenciales Invalidas");
                 }
                 limpiarControles();
             }
