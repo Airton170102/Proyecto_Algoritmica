@@ -199,7 +199,7 @@ public class frmPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnEmpleados;
     public javax.swing.JButton btnRegistro;
-    private javax.swing.JButton btnSalir;
+    public javax.swing.JButton btnSalir;
     public javax.swing.JButton btnSeleccion;
     private javax.swing.JLabel lblImagen;
     private javax.swing.JLabel lblTitulo;

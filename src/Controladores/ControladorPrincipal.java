@@ -16,6 +16,12 @@ public class ControladorPrincipal {
     public ControladorPrincipal(Usuario u, frmPrincipal fp) {
         this.u = u;
         this.fp = fp;
+          this.fp.btnSalir.addActionListener( new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        });
         this.fp.btnRegistro.addActionListener( new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
