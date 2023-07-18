@@ -1,6 +1,7 @@
 
 package Controladores;
 
+import Modelo.ProcesoSeleccion;
 import Modelo.Usuario;
 import Vista.frmPrincipal;
 import Vista.frmSeleccionCandidatos;
@@ -19,7 +20,10 @@ public class ControladorSeleccionCandidato {
         this.fSC.btnAgregar.addActionListener( new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(fSC, "Candidato Agregado");
+                JOptionPane.showMessageDialog(fSC, "Candidato Agregado para la Entrevista");
+                
+                ProcesoSeleccion idBuscado = new ProcesoSeleccion();
+                idBuscado.agregarCandidatoEntrevista(fSC);
             }
             
         });
@@ -32,16 +36,8 @@ public class ControladorSeleccionCandidato {
                 controlPrincipal.iniciar();
             }
         });
-        /*
-        System.out.println("Si yo pongo algo aca, normal aparece en Pantalla, pero si lo pongo adentro del ActionListener, eso ya no se ejecuta");
-        this.frSelecCand.botonAgregar.addActionListener( new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(frSelecCand, "Candidato Agregado");
-            }
-            
-        });
-    */}
+    }
+    
     public void iniciar(){
         this.fSC.setLocationRelativeTo(null);
         this.fSC.setVisible(true);
