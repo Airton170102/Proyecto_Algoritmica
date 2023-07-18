@@ -1,66 +1,64 @@
 package Modelo;
 
 
-import Vista.frmSeleccionCandidatos;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import Modelo.Puesto;
 import java.io.Serializable;
+import java.util.Date;
 
 public class ProcesoSeleccion implements Serializable{
 
-    public ProcesoSeleccion()
-    {
-        
+    private Puesto puesto;
+    private Date inicio;
+    private Date fin;
+    private Date publicacion;
+
+    public ProcesoSeleccion(Puesto puesto, Date inicio, Date fin, Date publicacion) {
+        this.puesto = puesto;
+        this.inicio = inicio;
+        this.fin = fin;
+        this.publicacion = publicacion;
     }
 
-    public String buscarID(frmSeleccionCandidatos idSeleccionado)
-    {
-        String idBuscar = idSeleccionado.txtIdEntrevista.getText();
-        String rutaArchivo = "registro.txt";
-        String lineaDatos = null;
-        String idTxt=null;
-        
-        try (BufferedReader br = new BufferedReader(new FileReader(rutaArchivo))) {
-            String linea;
-            while ((linea = br.readLine()) != null) 
-            {
-                String[] datos = linea.split(",");
-                idTxt = datos[0];
+    public Puesto getPuesto() {
+        return puesto;
+    }
 
-                if (idTxt.equals(idBuscar)) {
-                   lineaDatos = linea;
-                   break;
-                }
-            }
-        } 
-        catch (IOException e) { 
-            System.err.println("Error al leer el archivo: " + e.getMessage());
-        }
-        return lineaDatos;
+    public Date getInicio() {
+        return inicio;
+    }
+
+    public Date getFin() {
+        return fin;
+    }
+
+    public Date getPublicacion() {
+        return publicacion;
     }
     
-    public void agregarCandidatoEntrevista(frmSeleccionCandidatos idSeleccionado)
-    {
-        
-        String rutaArchivo = "entrevista.txt";
-        String lineaDatos = buscarID(idSeleccionado);
-        
-        if(lineaDatos != null)
-        {
-            try (BufferedWriter bw = new BufferedWriter(new FileWriter(rutaArchivo, true))) {
-            
-            bw.write(lineaDatos);
-            bw.newLine();
-            } catch (IOException e) {
-                System.err.println("Error al escribir en el archivo: " + e.getMessage());
-            }
-        }
-        else
-        {
-            System.out.println("Error al guardar datos");
-        }
+    
+    public void registrarPuesto() {
     }
+
+    public void buscarPuesto() {
+    }
+
+    public void eliminarPuesto() {
+    }
+    /*
+    public void evaluarCurriculum(Candidato candidato, int puntaje) {
+        candidato.evaluarCurriculum(puntaje);
+    }
+
+    public void evaluarEntrevista(Candidato candidato, int puntaje) {
+        candidato.evaluarEntrevista(puntaje);
+    }
+
+    public boolean pasarAProcesoEntrevista(Candidato candidato) {
+        return candidato.getPuntajeCurriculum() > 7;
+    }
+
+    public boolean pasarContratacion(Candidato candidato) {
+        return candidato.getPuntajeEntrevista() >= 9;
+    }
+*/
 }
