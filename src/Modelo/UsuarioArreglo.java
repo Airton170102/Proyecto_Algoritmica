@@ -28,6 +28,7 @@ public class UsuarioArreglo implements Serializable{
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(rutaArchivo, true))) {
             writer.write(correo + "," + password);
             writer.newLine();
+            agregar(new Usuario(correo, password));
         } catch (IOException e) {
             System.err.println("Error al escribir en el archivo: " + e.getMessage());
         }

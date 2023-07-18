@@ -1,23 +1,18 @@
 package Modelo;
 
 
-import Vista.frmPrincipal;
 import Vista.frmRegistroCandidato1;
 import Vista.frmSeleccionCandidatos;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 
-public class Candidato /*extends Persona*/ {
-//Al hacer que la clase Candidato ya no sea hija de Persona, tengo que poner como variable a todos los campos del Registro de Candidato
+public class Candidato {
+    
     private String id;
     private String nomnbres;
     private String apellidos;
@@ -48,8 +43,6 @@ public class Candidato /*extends Persona*/ {
         this.puestoaPostular = puestoaPostular;
     }
     
-    //No borren esto :v, le hice una SobreCarga al Constructor para poder usar
-    //un Constructor Vacío xd 
     public Candidato()
     {
         
@@ -93,7 +86,7 @@ public class Candidato /*extends Persona*/ {
                              
                 JTextArea txtArea = listaCandidatos.txtListaCandidatos;
                 
-                    listaCandidatos.txtListaCandidatos.append("\n\t\tCANDIDATO"+(i+1)+"\n\t"+"ID: "+id+"\n\tNombres: "+nombres+"\n\tApellidos: "+apellidos+"\n\tDireccion: "+direccion+"\n\tTelefono: "+telefono+"\n\tEducacion: "+educacion+"\n\tExperiencia: "+experiencia+"\n\tCertificacion: "+certificaciones+"\n\tHabilidades: "+habilidades+"\n\tObjetivo: "+objetivo+"\n\tPuesto a postular: "+puestoaPostular+"\n");
+                listaCandidatos.txtListaCandidatos.append("\n\t\tCANDIDATO"+(i+1)+"\n\t"+"ID: "+id+"\n\tNombres: "+nombres+"\n\tApellidos: "+apellidos+"\n\tDireccion: "+direccion+"\n\tTelefono: "+telefono+"\n\tEducacion: "+educacion+"\n\tExperiencia: "+experiencia+"\n\tCertificacion: "+certificaciones+"\n\tHabilidades: "+habilidades+"\n\tObjetivo: "+objetivo+"\n\tPuesto a postular: "+puestoaPostular+"\n");
                 i++;
             }
         } catch (IOException e) {

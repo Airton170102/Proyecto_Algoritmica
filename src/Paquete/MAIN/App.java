@@ -13,8 +13,8 @@ import Vista.frmSeleccionCandidatos;
 
 public class App implements Serializable{
      public static void main(String[] args) {
-        frmLogin fLogin = new frmLogin();
         UsuarioArreglo arreglo = new UsuarioArreglo(100);
+        frmLogin fLogin = new frmLogin();
         ControladorLogin controlLogin = new ControladorLogin(arreglo,fLogin);
         controlLogin.iniciar();
         
