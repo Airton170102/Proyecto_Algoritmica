@@ -90,15 +90,10 @@ public class Candidato /*extends Persona*/ {
                 String habilidades = datos[9];
                 String objetivo = datos[10];
                 String puestoaPostular = datos[11];
-                
-                //Imprimirlo en la Consola es para Probar no más
-                System.out.println("\nCANDIDATO N"+(i+1));
-                System.out.println("ID: "+id+"\nNombres: "+nombres+"\nApellidos: "+apellidos+"\nDireccion: "+direccion+"\nTelefono: "+telefono+"\nEducacion: "+educacion+"\nExperiencia: "+experiencia+"\nCertificacion: "+certificaciones+"\nHabilidades: "+habilidades+"\nObjetivo: "+objetivo+"\nPuesto a postular: "+puestoaPostular);
-               
+                             
                 JTextArea txtArea = listaCandidatos.txtListaCandidatos;
                 
-                listaCandidatos.txtListaCandidatos.append("\n\t\tCANDIDATO"+(i+1)+"\n\t"+"ID: "+id+"\n\tNombres: "+nombres+"\n\tApellidos: "+apellidos+"\n\tDireccion: "+direccion+"\n\tTelefono: "+telefono+"\n\tEducacion: "+educacion+"\n\tExperiencia: "+experiencia+"\n\tCertificacion: "+certificaciones+"\n\tHabilidades: "+habilidades+"\n\tObjetivo: "+objetivo+"\n\tPuesto a postular: "+puestoaPostular+"\n");
-                //txtArea.setEditable(false);
+                    listaCandidatos.txtListaCandidatos.append("\n\t\tCANDIDATO"+(i+1)+"\n\t"+"ID: "+id+"\n\tNombres: "+nombres+"\n\tApellidos: "+apellidos+"\n\tDireccion: "+direccion+"\n\tTelefono: "+telefono+"\n\tEducacion: "+educacion+"\n\tExperiencia: "+experiencia+"\n\tCertificacion: "+certificaciones+"\n\tHabilidades: "+habilidades+"\n\tObjetivo: "+objetivo+"\n\tPuesto a postular: "+puestoaPostular+"\n");
                 i++;
             }
         } catch (IOException e) {

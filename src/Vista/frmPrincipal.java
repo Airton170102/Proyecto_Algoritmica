@@ -22,6 +22,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         btnRegistro = new javax.swing.JButton();
         btnSeleccion = new javax.swing.JButton();
         btnEmpleados = new javax.swing.JButton();
+        btnContratarCandidatos = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -93,28 +94,40 @@ public class frmPrincipal extends javax.swing.JFrame {
             }
         });
 
+        btnContratarCandidatos.setFont(new java.awt.Font("Rockwell Extra Bold", 0, 12)); // NOI18N
+        btnContratarCandidatos.setText("CONTRATAR CANDIDATOS");
+        btnContratarCandidatos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnContratarCandidatosActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panControlesLayout = new javax.swing.GroupLayout(panControles);
         panControles.setLayout(panControlesLayout);
         panControlesLayout.setHorizontalGroup(
             panControlesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panControlesLayout.createSequentialGroup()
-                .addGap(100, 100, 100)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panControlesLayout.createSequentialGroup()
+                .addContainerGap(104, Short.MAX_VALUE)
                 .addGroup(panControlesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSeleccion)
-                    .addComponent(btnRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(panControlesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(btnContratarCandidatos)
+                        .addComponent(btnSeleccion)))
+                .addGap(100, 100, 100))
         );
         panControlesLayout.setVerticalGroup(
             panControlesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panControlesLayout.createSequentialGroup()
-                .addContainerGap(17, Short.MAX_VALUE)
+                .addGap(15, 15, 15)
                 .addComponent(btnRegistro)
                 .addGap(18, 18, 18)
                 .addComponent(btnSeleccion)
                 .addGap(18, 18, 18)
+                .addComponent(btnContratarCandidatos)
+                .addGap(18, 18, 18)
                 .addComponent(btnEmpleados)
-                .addGap(30, 30, 30))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout panFondoLayout = new javax.swing.GroupLayout(panFondo);
@@ -160,6 +173,10 @@ public class frmPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEmpleadosActionPerformed
 
+    private void btnContratarCandidatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContratarCandidatosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnContratarCandidatosActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -187,6 +204,8 @@ public class frmPrincipal extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -197,6 +216,7 @@ public class frmPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btnContratarCandidatos;
     public javax.swing.JButton btnEmpleados;
     public javax.swing.JButton btnRegistro;
     private javax.swing.JButton btnSalir;
